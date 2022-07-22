@@ -1,7 +1,6 @@
-
 from django.contrib import admin
 from .models import Genre
-from django_summernote.admin import SummernoteModelAdmin
+# from django_summernote.admin import SummernoteModelAdmin
 
 admin.site.register(Genre)
 # @admin.register(Genre)
@@ -13,4 +12,5 @@ admin.site.register(Genre)
 #     # search_fields = ('genre_name', 'content')  # add search bar in admin page
 
 #     summernote_fields = ('content')
+
 

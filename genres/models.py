@@ -25,7 +25,7 @@ class Genre(models.Model):
     #     ordering = ['-created_on']
 
     def __str__(self):
-        return self.title
+        return self.genre_name
 
 
 class Band(models.Model):
@@ -34,11 +34,12 @@ class Band(models.Model):
     band_name = models.CharField(max_length=80)
     band_email = models.EmailField()
     bio_body = models.TextField()
+    # band_image = CloudinaryField('image', default='placeholder')
     #created_on = models.DateTimeField(auto_now_add=True) 
     Band_approved = models.BooleanField(default=False)   
     # status = models.IntegerField(choices=STATUS, default=0)
     # created_on = models.DateTimeField(auto_now_add=True)
-    # image = models.ImageField(upload_to='images')
+    image = models.ImageField(upload_to='images')
 
     # class Meta:
     #     ordering = ['created_on']  # order post by create_on, from above, '-' means use descending order

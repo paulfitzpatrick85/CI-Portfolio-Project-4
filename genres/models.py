@@ -18,7 +18,7 @@ class Genre(models.Model):
     content = models.TextField()
     genre_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
-    #created_on = models.DateTimeField(auto_now_add=True)
+    # created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)    
     
     # class Meta:
@@ -34,12 +34,12 @@ class Band(models.Model):
     band_name = models.CharField(max_length=80)
     band_email = models.EmailField()
     bio_body = models.TextField()
-    # band_image = CloudinaryField('image', default='placeholder')
+    band_image = CloudinaryField('image', default='placeholder')
     #created_on = models.DateTimeField(auto_now_add=True) 
     Band_approved = models.BooleanField(default=False)   
     # status = models.IntegerField(choices=STATUS, default=0)
     # created_on = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='images')
+    #image = models.ImageField(upload_to='images')
 
     # class Meta:
     #     ordering = ['created_on']  # order post by create_on, from above, '-' means use descending order

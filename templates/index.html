@@ -6,53 +6,27 @@
     <div class="row">
         <div class="col-12 mt-5 left">
             <div class="row">
-                {% for genre in genre_list %}
                 <div class="col-md-2">
-                    <div class="card mb-2">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <!--use default if user doesn't provide,TO BE MOVED TO BAND SECTION WHEN WRITTEN-->
-                                {% if "placeholder" in genre.genre_image.url %}
-                                <img class="card-img-top" src="/images/default-genre-photo.jpg">
-                                {% else %}
-                                <img class="card-img-top" src="{{ genre.genre_image.url }}">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="auther">author: {{ genre.author }}</p>
-                                </div>
-                            </div>
-                            <a href="#" class="post-link">
-                                <h2 class="card-title">{{ genre.genre_name }}</h2>
-                                <p class="card-text">{{ genre.excerpt }}</p>
-                            </a>
-                            <!--TO BE MOVED TO BAND SECTION WHEN WRITTEN-->
-                             <!-- <hr>
-                            <p class="card-text text-muted h6">{{ genre.created_on}</p>
-                        </div> -->
+                    <div>
+                        <table>
+                            <tr>
+                            {% for genre in genre_list %}
+                                    <td> <img src="{{ genre.genre_image.url }}"> </td>
+                                {% endfor %}
+                            </tr>
+                    
+                            <tr>
+                                {% for genre in genre_list %}
+                                        <td> <a href="#" class="post-link">
+                                            <h2 class="card-title">{{ genre.genre_name }}</h2>
+                                        </a> </td>
+                                    {% endfor %}
+                                </tr>        
+                        </table>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:2 %}
-                </div>
-                <div class="row">
-                    {% endif %}
-                {% endfor %}
             </div>
-        </div>
-    </div>
 
-    {% if is_paginated %}         
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
-</div>
+    
 
 {% endblock %}

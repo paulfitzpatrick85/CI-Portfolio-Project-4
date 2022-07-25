@@ -9,23 +9,31 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, 'Draft'), (1, 'Published'))   # -may not use
 
 
-# genre model
+# genre models
 class Genre(models.Model):
     genre_name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='genre_section')  # if user is deleted, their posts are to
-    #updated_on = models.DateTimeField(auto_now=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='genre_section') 
     content = models.TextField()
     genre_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
-    # created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)    
     
-    # class Meta:
-    #     ordering = ['-created_on']
-
     def __str__(self):
         return self.genre_name
+
+
+class Genre_lite(models.Model):
+    genre_lite_name = models.CharField(max_length=200, unique=True)
+    slug_lite = models.SlugField(max_length=200, unique=True)
+    author_lite = models.ForeignKey(User, on_delete=models.CASCADE, related_name='genre_lite_section')  
+    content_lite = models.TextField()
+    genre_lite_image = CloudinaryField('image', default='placeholder')
+    excerpt_lite = models.TextField(blank=True)
+    status_lite = models.IntegerField(choices=STATUS, default=0)    
+    
+    def __str__(self):
+        return self.genre_lite_name
 
 
 class Band(models.Model):

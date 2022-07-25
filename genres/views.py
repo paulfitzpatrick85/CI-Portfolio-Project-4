@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import Genre
+from .models import Genre, Genre_lite
 
 
 class GenreList(generic.ListView):
     model = Genre
-    # queryset = Genre.objects.filter(status=1).order_by('word')  # change back to 'word' to order alphabetically
-    template_name = 'index.html'     # html file that view will render
-    paginate_by = 6       # limit number of post to 6, if there are more django will add page navagation
+    template_name = 'index.html'   
+    
+
+class Genre_lite_List(generic.ListView):
+    model = Genre_lite
+    template_name = 'index.html'   

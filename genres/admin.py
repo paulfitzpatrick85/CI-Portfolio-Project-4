@@ -13,7 +13,7 @@ class GenreAdmin(SummernoteModelAdmin):
 
 
 @admin.register(Genre_lite)
-class Genre_lite_Admin(SummernoteModelAdmin):
+class Genre_liteAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug_lite': ('genre_lite_name',)}  # populate slug(form?) from title
     search_fields = ('genre_lite_name', 'content')  # add search bar in admin page
     summernote_fields = ('content')

@@ -6,8 +6,9 @@ from .models import Genre, Genre_lite
 class GenreList(generic.ListView):
     model = Genre
     template_name = 'index.html'   
-    
+    paginate_by = 6
 
 class Genre_lite_List(generic.ListView):
     model = Genre_lite
     template_name = 'index.html'   
+    paginate_by = 6

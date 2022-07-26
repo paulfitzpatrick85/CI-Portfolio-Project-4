@@ -17,7 +17,9 @@ class Genre(models.Model):
     content = models.TextField()
     genre_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
-    status = models.IntegerField(choices=STATUS, default=0)    
+    status = models.IntegerField(choices=STATUS, default=0)  
+    approved = models.BooleanField(default=False)  
+    
     
     def __str__(self):
         return self.genre_name
@@ -31,7 +33,8 @@ class Genre_lite(models.Model):
     genre_lite_image = CloudinaryField('image', default='placeholder')
     excerpt_lite = models.TextField(blank=True)
     status_lite = models.IntegerField(choices=STATUS, default=0)    
-    
+    approved = models.BooleanField(default=False)
+
     def __str__(self):
         return self.genre_lite_name
 

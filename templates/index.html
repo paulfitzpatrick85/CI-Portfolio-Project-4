@@ -2,54 +2,30 @@
 
 {% block content %}
 
-<div class="gen">
-    {% for genre in genre_list %}
-    <tr>
-        <td>
-            <a href="#">
-                <h2>{{ genre.genre_name }}</h2>
-            </a> 
-        </td>
-    </tr>
-
-        {% endfor %}
-
-    {% for genre in genre_list %}
-    <tr>
-        <td>
-            <img src="{{ genre.genre_image.url }}"> 
-        </td>
-    </tr>
-
-        {% endfor %}
+    <div class="gen">
+        <div>
+            {% for genre in genre_list %}
+            <img src="{{ genre.genre_image.url }}">
+            <span id="yep">
+                <a href="#">
+                    <h2>{{ genre.genre_name }}</h2>
+                    <hr>
+                </a> 
+            </span>
+            {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div>
+                {% endif %}
+            {% endfor %}
+        </div>
+       
     </div>
 
-
-
-
-
-<div class="gen">
-    {% for genre_lite in genre_liteList %}
-    <tr>
-        <td>
-            <img src="{{ genre_lite.genre_lite_image.url }}"> 
-        </td>
-    </tr>
-
-        {% endfor %}
-
-    
-    {% for genre_lite in genre_liteList %}
-    <tr>
-        <td>
-            <a href="#">
-                <h2>{{ genre_lite.genre_lite_name }}</h2>
-            </a> 
-        </td>
-    </tr>
-
-        {% endfor %}
-</div>
+<!-- <div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Earum totam ab fugit nobis at quisquam voluptatibus voluptates officiis cumque,
+         officia laboriosam esse. Repellat ab laudantium aliquid sint amet facere nulla?</p>
+</div> -->
 
 
 

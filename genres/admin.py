@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Genre, Genre_lite, Band
+from .models import Genre, Band
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -10,15 +10,6 @@ class GenreAdmin(SummernoteModelAdmin):
     summernote_fields = ('content')
     actions = ['approve_genre']
     list_display = ('genre_name', 'approved', 'slug', 'status')  # titles/info on each post
-
-
-@admin.register(Genre_lite)
-class Genre_liteAdmin(SummernoteModelAdmin):
-    prepopulated_fields = {'slug_lite': ('genre_lite_name',)}  # populate slug(form?) from title
-    search_fields = ('genre_lite_name', 'content')  # add search bar in admin page
-    summernote_fields = ('content')
-    actions = ['approve_genre']
-    list_display = ('genre_lite_name', 'approved', 'slug_lite', 'status_lite')
 
 
 @admin.register(Band)

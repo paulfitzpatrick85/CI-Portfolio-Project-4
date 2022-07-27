@@ -1,14 +1,9 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import Genre, Genre_lite
+from .models import Genre
 
 
 class GenreList(generic.ListView):
     model = Genre
     template_name = 'index.html'   
-    
-
-class Genre_liteList(generic.ListView):
-    model = Genre_lite
-    template_name = 'index.html'   
-   
+    paginate_by = 6

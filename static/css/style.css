@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Condensed:wght@300&display=swap');
+
 /* body {
     background-color: #F9FAFC;
 }
@@ -139,15 +141,38 @@ a {
     background: transparent;
     border: none;
 } */
+body {
+    background-color: black;
+    color: antiquewhite;
+    font-family: Roboto Condensed;
+}
 
-.gen {
+.link-text {
+    color: antiquewhite;
+}
+
+.genre {
     display: grid;
     grid-template-columns: auto auto auto;
     text-align: center;
   }
 
-#yep {
-    margin-bottom: 20px;
+  .title {
+    text-align: center;
+    height: 50px;
+    font-family: Permanent Marker;
+    font-size: 50px;
+    margin: 5%;
+  }
+
+/*line break used as spacer between genre, as other css won't work, line itself hidden*/
+hr {
+  color: black;  
 }
 
+h4 {
+    font-family: Permanent Marker;
+    text-align: center;
+    margin: 5%;
+}
    

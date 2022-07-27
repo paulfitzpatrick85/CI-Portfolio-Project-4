@@ -2,13 +2,13 @@
 
 {% block content %}
 
-    <div class="gen">
+    <div class="genre">  <!--hide this in media query-->
         <div>
             {% for genre in genre_list %}
-            <img src="{{ genre.genre_image.url }}">
-            <span id="yep">
+            <img class="centre" src="{{ genre.genre_image.url }}">
+            <span>
                 <a href="#">
-                    <h2>{{ genre.genre_name }}</h2>
+                    <h2 class="link-text">{{ genre.genre_name }}</h2>
                     <hr>
                 </a> 
             </span>

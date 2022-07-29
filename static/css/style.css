@@ -152,8 +152,7 @@ body {
 }
 
 .genre {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    margin-left: 8%; 
     text-align: center;
   }
 
@@ -175,4 +174,29 @@ h4 {
     text-align: center;
     margin: 5%;
 }
-   
+
+.navbar-toggler-icon {
+    color: antiquewhite;
+}
+
+/*media queries*/
+
+@media screen and (min-width: 940px) {
+    .genre {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        text-align: center;
+        }
+}
+
+@media screen and (max-width: 550px) {
+#genre-image {
+    width: 75%;
+    }
+}
+
+@media screen and (max-width: 483px) {
+.title {
+    height: 100px;
+    }
+}

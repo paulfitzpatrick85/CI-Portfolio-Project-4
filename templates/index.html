@@ -7,7 +7,7 @@
             {% for genre in genre_list %}
             <img class="centre" id="genre-image" src="{{ genre.genre_image.url }}">
             <hr>
-                <a href="#">
+                <a href="{% url 'genre_detail' genre.slug %}">
                     <h2 class="link-text">{{ genre.genre_name }}</h2>
                     <hr><hr><hr>
                 </a> 
@@ -21,11 +21,7 @@
        
     </div>
 
-<!-- <div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Earum totam ab fugit nobis at quisquam voluptatibus voluptates officiis cumque,
-         officia laboriosam esse. Repellat ab laudantium aliquid sint amet facere nulla?</p>
-</div> -->
+
 
 
 

@@ -179,6 +179,15 @@ h4 {
     color: antiquewhite;
 }
 
+.genre-detail-heading {
+    text-align: center;
+}
+
+
+
+
+
+
 /*media queries*/
 
 @media screen and (min-width: 940px) {

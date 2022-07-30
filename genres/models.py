@@ -31,10 +31,10 @@ class Band(models.Model):
     band_name = models.CharField(max_length=80)
     band_email = models.EmailField()
     band_bio = models.TextField()
-    band_image = CloudinaryField('image', default='placeholder')
+    band_image = models.ImageField(upload_to='images', default='/images/default-genre-photo.jpg')
     band_approved = models.BooleanField(default=False)
     upcoming_tour_dates = models.TextField(default='TBA')
-    # status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=0)
     # image = models.ImageField(upload_to='images')
 
     

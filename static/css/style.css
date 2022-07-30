@@ -191,10 +191,13 @@ h4 {
 
 .btn-signup {
     background-color:antiquewhite;
-    color:black;
-    
+    color:black;   
 }
 
+.alert {
+    background-color:tan;
+    color: antiquewhite;
+}
 
 
 

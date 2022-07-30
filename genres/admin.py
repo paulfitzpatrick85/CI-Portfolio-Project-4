@@ -16,6 +16,7 @@ class GenreAdmin(SummernoteModelAdmin):
 class BandAdmin(SummernoteModelAdmin):
     search_fields = ('band_name', 'band_email', 'bio_body')
     actions = ['approve_band']    
+    list_display = ('band_name', 'band_approved', 'status')
 
     def approve_bands(self, request, queryset):
         queryset.update(approved=True)    

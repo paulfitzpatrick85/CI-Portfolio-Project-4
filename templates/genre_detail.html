@@ -5,9 +5,9 @@
             <div class="genre-detail-heading">
                 
                     {% if "placeholder" in genre.genre_image.url %}
-                    <img src="/images/default-genre-photo.jpg" width="75%">
+                    <img src="/images/default-genre-photo.jpg" width="60%">
                     {% else %}
-                    <img src="{{ genre.genre_image.url }}" width="75%">
+                    <img src="{{ genre.genre_image.url }}" width="60%">
                     {% endif %}
             </div>
             <div class="genre-detail-heading">
@@ -19,7 +19,7 @@
             
             <div>
             <h4>band name here {{ band.band_name }} </h4>
-             <h4>bio here {{ band.bio_body }}</h4>
+             <h4>bio here {{ band.band_bio }}</h4>
              <h4>image here {{ band.band_image }}</h4>   
             </div>
             

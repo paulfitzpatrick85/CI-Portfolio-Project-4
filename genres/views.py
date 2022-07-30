@@ -14,7 +14,7 @@ class GenreDetail(View):
     def get(self, request, slug, *args, **kwargs):    
         queryset = Genre.objects.filter(status=1)   
         genre = get_object_or_404(queryset, slug=slug)  
-        bands = genre.bands.filter(Band_approved=True)
+        bands = genre.bands.filter(band_approved=True)
 
         return render(
             request,            

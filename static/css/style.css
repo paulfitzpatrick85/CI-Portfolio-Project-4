@@ -107,10 +107,7 @@ a {
     color: lightgray;
 }
 
-.btn-signup {
-    background-color: #23BBBB;
-    color: #fff;
-}
+
 
 .btn-signup:hover,
 .btn-signup:active {
@@ -181,6 +178,21 @@ h4 {
 
 .genre-detail-heading {
     text-align: center;
+}
+
+.sign {
+    width: 30%;
+    margin: auto; 
+}
+
+.sign-heading {
+    text-align: center;
+}
+
+.btn-signup {
+    background-color:antiquewhite;
+    color:black;
+    
 }
 
 

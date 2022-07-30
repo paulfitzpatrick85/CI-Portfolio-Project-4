@@ -27,19 +27,16 @@ class Genre(models.Model):
 
 class Band(models.Model):
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE, related_name='bands')
-    # slug = models.SlugField(max_length=100, unique=True)  # taken from post/genre class
+    # slug = models.SlugField(max_length=100, unique=True)  
     band_name = models.CharField(max_length=80)
     band_email = models.EmailField()
-    bio_body = models.TextField()
+    band_bio = models.TextField()
     band_image = CloudinaryField('image', default='placeholder')
-    #created_on = models.DateTimeField(auto_now_add=True) 
-    Band_approved = models.BooleanField(default=False)   
+    band_approved = models.BooleanField(default=False)
+    upcoming_tour_dates = models.TextField(default='TBA')
     # status = models.IntegerField(choices=STATUS, default=0)
-    # created_on = models.DateTimeField(auto_now_add=True)
-    #image = models.ImageField(upload_to='images')
+    # image = models.ImageField(upload_to='images')
 
-    # class Meta:
-    #     ordering = ['created_on']  # order post by create_on, from above, '-' means use descending order
-
+    
     def __str__(self):
-        return f"Band {self.bio_body} by {self.band_name}"  # add image when code working properly
+        return f"Band {self.band_bio} by {self.band_name}"  # add image when code working properly

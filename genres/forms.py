@@ -1,6 +1,7 @@
 from .models import Band
 from django import forms
 
+
 class BandForm(forms.ModelForm):
     class Meta:
         model = Band

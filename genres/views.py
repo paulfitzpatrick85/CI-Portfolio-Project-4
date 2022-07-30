@@ -33,7 +33,6 @@ class GenreDetail(View):
         queryset = Genre.objects.filter(status=1)   
         genre = get_object_or_404(queryset, slug=slug)  
         bands = genre.bands.filter(band_approved=True)
-
         band_form = BandForm(data=request.POST)
 
         if band_form.is_valid():
@@ -53,6 +52,6 @@ class GenreDetail(View):
                 "genre": genre,          
                 "bands": bands,
                 "band_added": True,
-                "band_form": BandForm()
+                "band_form": BandForm(),
             },
         )

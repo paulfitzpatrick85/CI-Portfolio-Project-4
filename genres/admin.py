@@ -21,16 +21,3 @@ class BandAdmin(SummernoteModelAdmin):
     def approve_bands(self, request, queryset):
         queryset.update(approved=True)    
 
-
-# def approve_selected(modeladmin, request, queryset):
-#     rows_updated = queryset.approve(active=0)
-#     for obj in queryset: obj.save()
-#     if rows_updated == 1:
-#         message_bit = '1 item was'
-#     else:
-#         message_bit = '%s items were' % rows_updated
-#     modeladmin.message_user(request, '%s successfully approve.' % message_bit)
-#     approve_selected.short_description = "approve selected items"
-
-# # add deactivates 
-# admin.site.add_action(approve_selected)

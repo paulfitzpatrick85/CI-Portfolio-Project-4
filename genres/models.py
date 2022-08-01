@@ -31,14 +31,16 @@ class Band(models.Model):
     band_name = models.CharField(max_length=80)
     band_email = models.EmailField()
     band_bio = models.TextField()
-    band_image = models.ImageField(upload_to='images', default='/images/default-genre-photo.jpg')
-    # band_image = models.ImageField(upload_to='https://cloudinary.com/console/c-c24d22f1b451dca182670b2cf976ec/media_library/folders/c12896f112895c0f6e31ef0d8155d6ec0a', default='/images/default-genre-photo.jpg')
     # band_image = models.ImageField(upload_to='images', default='/images/default-genre-photo.jpg')
+    
     band_approved = models.BooleanField(default=False)
     upcoming_tour_dates = models.TextField(default='TBA')
     status = models.IntegerField(choices=STATUS, default=0)
-    # image = models.ImageField(upload_to='images')
-    # band_image = CloudinaryField('image', default='placeholder')
+    # variations i have tried
+    # band_image = models.ImageField(upload_to='images')
+    band_image = CloudinaryField('image', default='placeholder')
+    # band_image = models.ImageField(upload_to='https://cloudinary.com/console/c-c24d22f1b451dca182670b2cf976ec/media_library/folders/c12896f112895c0f6e31ef0d8155d6ec0a', default='/images/default-genre-photo.jpg')
+    # band_image = models.ImageField(upload_to='images', default='/images/default-genre-photo.jpg')
     
     def __str__(self):
-        return f"Band by {self.band_name}" 
+        return f"Band {self.band_image}, {self.band_bio} by {self.band_name}" 

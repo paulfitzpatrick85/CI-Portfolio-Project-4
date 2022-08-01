@@ -2,46 +2,23 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-            <div class="genre-detail-heading">
-                
-                    {% if "placeholder" in genre.genre_image.url %}
-                    <img src="/images/default-genre-photo.jpg" width="60%">
-                    {% else %}
-                    <img src="{{ genre.genre_image.url }}" width="60%">
-                    {% endif %}
-            </div>
-            <div class="genre-detail-heading">
-                    <h1>
-                        {{ genre.genre_name }}
-                    </h1>
-                
-            </div>
-            
+<div class="genre-detail-heading">
 
-            <div>
+    {% if "placeholder" in genre.genre_image.url %}
+    <img  src="/images/default-genre-photo.jpg" width="70%">
+    {% else %}
+    <img src="{{ genre.genre_image.url }}" width="70%" >
+    {% endif %}
+</div>
+<div class="genre-detail-heading">
+    <h1>
+        {{ genre.genre_name }}
+    </h1>
 
-                {% if band_added %}  
-                <div class="alert alert-success" role="alert">   
-                 Your profile will be added once our admin give it the once over!
-                </div>
-                {% else %}  
-
-            {% if user.is_authenticated %}      
-
-                <h3>Add Your Band Below <i class="fa fa-arrow-down"></i></h3>
-                <p>Posted by: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3em;">  
-                    {{ band_form | crispy }}     
-                    {% csrf_token %}                
-                    <button type="submit" class="btn btn-signup btn-lg">Add My Band!</button>
-                </form>
-                {% endif %}
-                {% endif %}
-        </div>
+</div>
 
 
-
-        {% for band in bands %}
+{% for band in bands %}
             <div>
                 
             <h4>band name here {{ band.band_name }} </h4>
@@ -53,5 +30,24 @@
             </div>
             {% endfor %}
 
-{% endblock content %}
+<div>
+    {% if band_added %}
+    <div class="alert alert-success" role="alert">
+        Your profile will be added once our admin give it the once over!
+    </div>
+    {% else %}
 
+    {% if user.is_authenticated %}
+
+    <h3>Add Your Band Below <i class="fa fa-arrow-down"></i></h3>
+    <p>Posted by: {{ user.username }}</p>
+    <form enctype="multipart/form-data" method="post" style="margin-top: 1.3em;">
+        {{ band_form | crispy }}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-signup btn-lg">Add My Band!</button>
+    </form>
+    {% endif %}
+    {% endif %}
+</div>
+
+{% endblock content %}

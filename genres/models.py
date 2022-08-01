@@ -35,7 +35,7 @@ class Band(models.Model):
     upcoming_tour_dates = models.TextField(default='TBA')
     status = models.IntegerField(choices=STATUS, default=0)
     band_image = CloudinaryField('image', default='placeholder')
-    upcoming_tour_dates = models.DateField(null=True, default='DD-MM-YYYY')
+    
     concert_venue = models.CharField(max_length=30, default='TBA')
     
     def __str__(self):

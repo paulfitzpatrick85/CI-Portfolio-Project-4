@@ -4,10 +4,10 @@
 
 <div class="genre-detail-heading">
 
-    {% if "placeholder" in genre.genre_image.url %}
-    <img  src="/images/default-genre-photo.jpg" width="70%">
+    {% if band.band_image|stringformat:'s'  == "placeholder" %}
+    <img src="https://res.cloudinary.com/paulfitz85/image/upload/v1659219337/media/images/default_genre_photo_acacvw.jpg" width="70%">
     {% else %}
-    <img src="{{ genre.genre_image.url }}" width="70%" >
+    <img src="{{ genre.genre_image.url }}" width="70%">
     {% endif %}
 </div>
 <div class="genre-detail-heading">
@@ -19,16 +19,17 @@
 
 
 {% for band in bands %}
-            <div>
-                
-            <h4>band name here {{ band.band_name }} </h4>
-             <h4>bio here {{ band.band_bio }}</h4>
-             <h4>image here <img src="{{ band.band_image.url }}" width="60%"></h4> 
-             
-             
-
-            </div>
-            {% endfor %}
+<div>
+    <h4>band name here {{ band.band_name }} </h4>
+    <h4>bio here {{ band.band_bio }}</h4>
+    <h4>image here </h4>
+    {% if band.band_image|stringformat:'s'  == "placeholder" %}
+    <img src="https://res.cloudinary.com/paulfitz85/image/upload/v1659219337/media/images/default_genre_photo_acacvw.jpg" width="60%">
+    {% else %}
+    <img src="{{ band.band_image.url }}" width="60%">
+    {% endif %}
+</div>
+{% endfor %}           
 
 <div>
     {% if band_added %}

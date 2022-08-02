@@ -32,11 +32,11 @@ class Band(models.Model):
     band_email = models.EmailField()
     band_bio = models.TextField()
     band_approved = models.BooleanField(default=False)
-    upcoming_tour_dates = models.TextField(default='TBA')
     status = models.IntegerField(choices=STATUS, default=0)
     band_image = CloudinaryField('image', default='placeholder')
-    
+    next_gig = models.TextField(default='DD-MM-YYYY')
     concert_venue = models.CharField(max_length=30, default='TBA')
+
     
     def __str__(self):
         return f"Band {self.band_image}, {self.band_bio} by {self.band_name}" 

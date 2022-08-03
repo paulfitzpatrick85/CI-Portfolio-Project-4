@@ -29,6 +29,7 @@
     {% endif %}
     <h3>{{ band.band_name }} </h3>
     <p>bio here {{ band.band_bio }}<p>
+        <h6>Next Live Performance: {{ band.next_gig }} at {{ band.concert_venue }}</h6>
 </div>
 {% endfor %}
 

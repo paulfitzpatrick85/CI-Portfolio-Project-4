@@ -2,44 +2,43 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<div class="genre-detail-heading">
-
-    {% if band.band_image|stringformat:'s'  == "placeholder" %}
-    <img src="https://res.cloudinary.com/paulfitz85/image/upload/v1659219337/media/images/default_genre_photo_acacvw.jpg" width="70%">
-    {% else %}
-    <img src="{{ genre.genre_image.url }}" width="70%">
-    {% endif %}
-</div>
-<div class="genre-detail-heading">
-    <h1>
-        {{ genre.genre_name }}
-    </h1>
-
+<div class="center-contents">
+    <div>
+        {% if genre.genre_image|stringformat:'s'  == "placeholder" %}
+        <img src="https://res.cloudinary.com/paulfitz85/image/upload/v1659219337/media/images/default_genre_photo_acacvw.jpg"
+            width="50%">
+        {% else %}
+        <img src="{{ genre.genre_image.url }}" width="50%">
+        {% endif %}
+    </div>
+    <div class="center-contents genre-heading-text">
+        <h2 id="border">
+            Check Out Bands From The Local {{ genre.genre_name }} Scene Below
+        </h2>
+    </div>
 </div>
 
 
 {% for band in bands %}
-<div>
-    <h4>band name here {{ band.band_name }} </h4>
-    <h4>bio here {{ band.band_bio }}</h4>
-    <h4>image here </h4>
+<div class="center-contents band">
     {% if band.band_image|stringformat:'s'  == "placeholder" %}
-    <img src="https://res.cloudinary.com/paulfitz85/image/upload/v1659219337/media/images/default_genre_photo_acacvw.jpg" width="60%">
+    <img src="https://res.cloudinary.com/paulfitz85/image/upload/v1659219337/media/images/default_genre_photo_acacvw.jpg"
+        width="60%">
     {% else %}
     <img src="{{ band.band_image.url }}" width="60%">
     {% endif %}
+    <h3>{{ band.band_name }} </h3>
+    <p>bio here {{ band.band_bio }}<p>
 </div>
-{% endfor %}           
+{% endfor %}
 
-<div>
+{% if user.is_authenticated %}
+<div class="sign">
     {% if band_added %}
     <div class="alert alert-success" role="alert">
         Your profile will be added once our admin give it the once over!
     </div>
     {% else %}
-
-    {% if user.is_authenticated %}
-
     <h3>Add Your Band Below <i class="fa fa-arrow-down"></i></h3>
     <p>Posted by: {{ user.username }}</p>
     <form enctype="multipart/form-data" method="post" style="margin-top: 1.3em;">
@@ -47,8 +46,7 @@
         {% csrf_token %}
         <button type="submit" class="btn btn-signup btn-lg">Add My Band!</button>
     </form>
-    {% endif %}
-    {% endif %}
 </div>
-
+{% endif %}
+{% endif %}
 {% endblock content %}

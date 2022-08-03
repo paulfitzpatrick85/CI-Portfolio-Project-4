@@ -3,12 +3,12 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}{% trans "Log In" %}{% endblock %}
 
 {% block content %}
 
 <div class="sign">
-<h2 class="sign-heading">{% trans "Sign In" %}</h2>
+<h2 class="sign-heading">{% trans "Log In" %}</h2>
 
 
 <p>{% blocktrans %}If you have not created an account yet, then please
@@ -22,7 +22,7 @@
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
   
-  <button class="btn btn-signup" type="submit">{% trans "Sign In" %}</button>
+  <button class="btn btn-signup" type="submit">{% trans "Log In" %}</button>
 </form>
 
 </div>

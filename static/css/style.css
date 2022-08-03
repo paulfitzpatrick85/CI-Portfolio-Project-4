@@ -176,14 +176,28 @@ h4 {
     color: antiquewhite;
 }
 
-.genre-detail-heading {
+/*genre_detail.html*/
+
+.center-contents {
     text-align: center;
+    margin-bottom: 8%;
 }
 
+.genre-heading-text {
+    margin-top: 5px;
+}
+
+.band {
+    
+    color: ;
+}
 
 .sign {
+    background-color: #31313B;
     width: 30%;
     margin: auto; 
+    padding: 2%;
+    border-radius: 5%;
 }
 
 .sign-heading {
@@ -192,7 +206,8 @@ h4 {
 
 .btn-signup {
     background-color:antiquewhite;
-    color:black;   
+    color:black; 
+    margin: 2%;    
 }
 
 .alert {

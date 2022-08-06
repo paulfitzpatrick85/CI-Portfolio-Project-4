@@ -1,4 +1,4 @@
-from .models import Band
+from .models import Genre, Band
 from django import forms
 from django.forms import ModelForm
 

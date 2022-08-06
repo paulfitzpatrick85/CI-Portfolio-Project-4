@@ -61,3 +61,6 @@ class GenreDetail(View):
                 "band_form": BandForm(),
             },
         )
+
+ 
+    

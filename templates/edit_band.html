@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags%}
+
+<div >
+
+    {% if user.is_authenticated %}
+    <h3 class="title">Edit band</h3>
+    <p>Editing as: {{ user.username }}</p>
+    <form method="POST">
+        {{ band_form | crispy }}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-signup btn-lg">Update band</button>
+        {% if updated %}
+        
+    </form>
+    {% endif %}
+    {% endif %}
+   
+</div>
+{%endblock%}

@@ -62,4 +62,8 @@ class GenreDetail(View):
 
 
 def edit_band(request, band_id):
-    return render(request, 'edit_band.html')
+    band = get_object_or_404(Band, id=band_id)
+    #band_form = BandForm(data=request.GET)
+    band_form = BandForm(instance=band)
+    context = {"band_form": BandForm}
+    return render(request, 'edit_band.html', context)

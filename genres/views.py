@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from .models import Genre, Band
 from .forms import BandForm
@@ -49,8 +49,6 @@ class GenreDetail(View):
             band_form = BandForm() 
 
         
-
-
         return render(
             request,            
             "genre_detail.html",       
@@ -62,5 +60,6 @@ class GenreDetail(View):
             },
         )
 
- 
-    
+
+def edit_band(request, band_id):
+    return render(request, 'edit_band.html')

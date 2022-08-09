@@ -13,3 +13,6 @@ class BandForm(forms.ModelForm):
         fields = ('band_image', 'band_name', 'band_email', 'band_bio', 'next_gig', 'concert_venue')
         widgets = {'next_gig': DateInput(), }
      
+
+
+# entire file may not be required

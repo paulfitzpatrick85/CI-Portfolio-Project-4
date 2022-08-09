@@ -27,17 +27,16 @@ class Genre(models.Model):
 
 class Band(models.Model):
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE, related_name='bands')
-    # slug = models.SlugField(max_length=100, unique=True)  
+    # slug = models.SlugField(default='genre', unique=True)  
     band_name = models.CharField(max_length=80)
     band_email = models.EmailField()
     band_bio = models.TextField()
-    band_approved = models.BooleanField(default=False)
     band_image = CloudinaryField('image', default='placeholder')
     next_gig = models.TextField(default='DD-MM-YYYY')
     concert_venue = models.CharField(max_length=30, default='TBA')
-    status = models.IntegerField(choices=STATUS, default=0)
-    band_approved = models.BooleanField(default=False)
+    status = models.IntegerField(choices=STATUS, default=0)   #change from 0
+    band_approved = models.BooleanField(default=False)   #change from false
 
     
     def __str__(self):
-        return f"Band {self.band_image}, {self.band_bio} by {self.band_name}" 
+        return self.band_name 

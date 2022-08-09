@@ -1,0 +1,48 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load crispy_forms_tags %}
+<body>
+    
+    {% if user.is_authenticated %}
+<div class="sign">
+    {% if band_added %}
+    <div class="alert alert-success" role="alert">
+        Your profile will be added once our admin give it the once over!
+    </div>
+    {% else %}
+    <h3>Add Your Band Below <i class="fa fa-arrow-down"></i></h3>
+    <!-- <p>Posted by: {{ user.username }}</p> -->
+    <form enctype="multipart/form-data" method="post" action="add" style="margin-top: 1.3em;"> <!--action =url form submits to-->
+        {{  band_form | crispy }}
+
+        {% csrf_token %}
+        <button type="submit" class="btn btn-signup btn-lg">Add My Band!</button>
+    </form>
+</div>
+
+{% endif %}
+{% endif %}
+
+    <!-- <form action="">
+<div>
+    <p>
+
+    </p>
+</div>
+<div>
+    <p>
+
+    </p>
+</div>
+<div>
+    <button></button>
+</div>
+    </form> -->
+
+</body>
+
+
+
+
+
+{% endblock %}

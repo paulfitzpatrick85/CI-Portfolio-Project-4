@@ -4,20 +4,14 @@
 
 {% load crispy_forms_tags%}
 
-<div >
 
-    {% if user.is_authenticated %}
-    <h3 class="title">Edit band</h3>
-    <p>Editing as: {{ user.username }}</p>
-    <form method="POST">
+<div>
+    <h2>edit page</h2>
+    <form enctype="multipart/form-data" method="post" style="margin-top: 1.3em;">
         {{ band_form | crispy }}
         {% csrf_token %}
-        <button type="submit" class="btn btn-signup btn-lg">Update band</button>
-        {% if updated %}
-        
+        <button type="submit" class="btn btn-signup btn-lg">edit My Band!</button>
     </form>
-    {% endif %}
-    {% endif %}
-   
 </div>
+
 {%endblock%}

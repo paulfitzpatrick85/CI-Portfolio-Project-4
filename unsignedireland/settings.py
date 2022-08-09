@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'genres',
 ]
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+# ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 SITE_ID = 1
 

@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from .models import Genre, Band
 from .forms import BandForm
+from django.contrib.auth.models import User
 
 
 class GenreList(generic.ListView):
@@ -47,7 +48,6 @@ class GenreDetail(View):
         else:
             band_form = BandForm() 
 
-        
         return render(
             request,            
             "genre_detail.html",       
@@ -60,31 +60,36 @@ class GenreDetail(View):
         )
 
 
-def edit_band(request, band_id):
-    band_form = BandForm(data=request.GET)
-    band = get_object_or_404(Band, id=band_id)
-    if request.method == 'POST':                          
-        band_form = BandForm(request.POST, request.FILES, instance=band)   # populate with existing data       
-        if band_form.is_valid():
-            band_form.instance.band_email = request.user.email
-            band_form.instance.name = request.user.username
-            # band = band_form.save(commit=False)
-            # band.genre = genre
-            band.save()
-            return redirect('/')
-        else:
-            # Prepopulation happens here:
-            data = {"band_name": band.band_name,
-                    "band_image": band.band_image, 
-                    "band_email": band.band_email, 
-                    "band_bio": band.band_bio,
-                    "next_gig": band.next_gig,
-                    "concert_venue": band.concert_venue, }  
-            band_form = BandForm(initial=data) 
-            
+def user_bands(request):
+    logged_in_user = request.user
+    logged_in_user_bands = Band.objects.filter(author=logged_in_user)
+    return render(request, 'genre_detail.html', {'band': logged_in_user_bands})
 
-    
-    context = {"band_form": BandForm(instance=band)}
-    return render(request, 'edit_band.html', context)
-    
+
+def edit_band(request, band_id):
+    band = get_object_or_404(Band, id=band_id)
+    # Authenticated user views and edits only their own bands
+    if band.band_email != request.user.email: 
+        return redirect('/')
+    else:
+        band_form = BandForm(data=request.GET)
         
+        if request.method == 'POST':                          
+            band_form = BandForm(request.POST, request.FILES, instance=band)   # populate with existing data    
+            if band_form.is_valid():
+                band_form.instance.band_email = request.user.email
+                band_form.instance.band_name = request.user.username
+                band.save()
+                return redirect('/')
+            else:
+                # Prepopulation happens here:
+                data = {"band_name": band.band_name,
+                        "band_image": band.band_image, 
+                        "band_email": band.band_email, 
+                        "band_bio": band.band_bio,
+                        "next_gig": band.next_gig,
+                        "concert_venue": band.concert_venue, }  
+                band_form = BandForm(initial=data) 
+                
+        context = {"band_form": BandForm(instance=band)}
+        return render(request, 'edit_band.html', context)

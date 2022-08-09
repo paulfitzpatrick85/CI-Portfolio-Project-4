@@ -7,11 +7,13 @@
 
 <div class="center-contents sign">
     <h2>edit page</h2>
+    {% if user.is_authenticated %}
     <form enctype="multipart/form-data" method="post" style="margin-top: 1.3em;">
         {{ band_form | crispy }}
         {% csrf_token %}
         <button type="submit" class="btn btn-signup btn-lg">edit My Band!</button>
     </form>
+    {% endif %}
 </div>
 
 {%endblock%}

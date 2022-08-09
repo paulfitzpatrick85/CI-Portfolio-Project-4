@@ -14,3 +14,8 @@ all photos from pexels.com
 
 
 ![pp4 mock-up 3](https://user-images.githubusercontent.com/55660566/183247012-8bf54cab-6812-4f37-b015-48bf56e569a5.jpg)
+
+
+ongoing bugs:
+after adding band, user has to navagate to home then back to genre page to check for added profile.
+edit form not prepopulating

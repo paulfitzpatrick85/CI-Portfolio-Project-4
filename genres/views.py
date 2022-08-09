@@ -66,15 +66,25 @@ def edit_band(request, band_id):
     if request.method == 'POST':                          
         band_form = BandForm(request.POST, request.FILES, instance=band)   # populate with existing data       
         if band_form.is_valid():
-            # band_form.instance.band_email = request.user.email
-            # band_form.instance.name = request.user.username
+            band_form.instance.band_email = request.user.email
+            band_form.instance.name = request.user.username
             # band = band_form.save(commit=False)
-            #band.genre = genre
+            # band.genre = genre
             band.save()
-            return redirect('genre_detail.html')
+            return redirect('/')
+        else:
+            # Prepopulation happens here:
+            data = {"band_name": band.band_name,
+                    "band_image": band.band_image, 
+                    "band_email": band.band_email, 
+                    "band_bio": band.band_bio,
+                    "next_gig": band.next_gig,
+                    "concert_venue": band.concert_venue, }  
+            band_form = BandForm(initial=data) 
+            
+
     
-    #band_form = BandForm(instance=band)
-    context = {"band_form": BandForm}
+    context = {"band_form": BandForm(instance=band)}
     return render(request, 'edit_band.html', context)
     
         

@@ -38,7 +38,6 @@ class GenreDetail(View):
 
         if request.method == 'POST':                          
             band_form = BandForm(request.POST, request.FILES)          
-
         if band_form.is_valid():
             band_form.instance.band_email = request.user.email
             band_form.instance.name = request.user.username
@@ -62,8 +61,20 @@ class GenreDetail(View):
 
 
 def edit_band(request, band_id):
+    band_form = BandForm(data=request.GET)
     band = get_object_or_404(Band, id=band_id)
-    #band_form = BandForm(data=request.GET)
-    band_form = BandForm(instance=band)
+    if request.method == 'POST':                          
+        band_form = BandForm(request.POST, request.FILES, instance=band)   # populate with existing data       
+        if band_form.is_valid():
+            # band_form.instance.band_email = request.user.email
+            # band_form.instance.name = request.user.username
+            # band = band_form.save(commit=False)
+            #band.genre = genre
+            band.save()
+            return redirect('genre_detail.html')
+    
+    #band_form = BandForm(instance=band)
     context = {"band_form": BandForm}
     return render(request, 'edit_band.html', context)
+    
+        

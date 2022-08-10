@@ -93,3 +93,14 @@ def edit_band(request, band_id):
                 
         context = {"band_form": BandForm(instance=band)}
         return render(request, 'edit_band.html', context)
+
+
+def delete_band(request, band_id):
+    
+    band = get_object_or_404(Band, id=band_id)
+    # Authenticated usercan delete only their own bands
+    if band.band_email != request.user.email: 
+        return redirect('/')
+    else:
+        band.delete()
+    return redirect('/')

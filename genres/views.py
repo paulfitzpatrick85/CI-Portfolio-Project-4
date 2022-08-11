@@ -50,7 +50,7 @@ class GenreDetail(View):
 
         return render(
             request,            
-            "genre_detail.html",       
+            "add_band.html",       
             {
                 "genre": genre,          
                 "bands": bands,
@@ -58,12 +58,6 @@ class GenreDetail(View):
                 "band_form": BandForm(),
             },
         )
-
-
-def user_bands(request):
-    logged_in_user = request.user
-    logged_in_user_bands = Band.objects.filter(author=logged_in_user)
-    return render(request, 'genre_detail.html', {'band': logged_in_user_bands})
 
 
 def edit_band(request, band_id):
@@ -96,7 +90,6 @@ def edit_band(request, band_id):
 
 
 def delete_band(request, band_id):
-    
     band = get_object_or_404(Band, id=band_id)
     # Authenticated usercan delete only their own bands
     if band.band_email != request.user.email: 

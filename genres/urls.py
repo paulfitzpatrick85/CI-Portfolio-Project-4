@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-#from genres.views import edit_band
+from genres.views import delete_band
 
 
 urlpatterns = [

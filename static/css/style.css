@@ -220,6 +220,7 @@ h4 {
 
 
 
+
 /*media queries*/
 
 @media screen and (min-width: 940px) {
@@ -240,4 +241,8 @@ h4 {
 .title {
     height: 100px;
     }
+}
+
+.modal {
+    color: black;
 }

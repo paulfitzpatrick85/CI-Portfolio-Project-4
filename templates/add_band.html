@@ -3,7 +3,8 @@
 {% load crispy_forms_tags %}
 <body>
     
-    {% if user.is_authenticated %}
+  <!--add band form and approval pending message-->
+{% if user.is_authenticated %}
 <div class="sign">
     {% if band_added %}
     <div class="alert alert-success" role="alert">
@@ -11,10 +12,9 @@
     </div>
     {% else %}
     <h3>Add Your Band Below <i class="fa fa-arrow-down"></i></h3>
-    <!-- <p>Posted by: {{ user.username }}</p> -->
-    <form enctype="multipart/form-data" method="post" action="add" style="margin-top: 1.3em;"> <!--action =url form submits to-->
-        {{  band_form | crispy }}
-
+    <p>Posted by: {{ user.username }}</p>
+    <form enctype="multipart/form-data" method="post" style="margin-top: 1.3em;">
+        {{ band_form | crispy }}
         {% csrf_token %}
         <button type="submit" class="btn btn-signup btn-lg">Add My Band!</button>
     </form>

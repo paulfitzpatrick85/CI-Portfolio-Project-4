@@ -37,8 +37,11 @@
         <h6>Next Live Performance: {{ band.next_gig }} at {{ band.concert_venue }}</h6>
         <!--EDIT BAND BUTTON if logged in-->
         {% if user.is_authenticated %}
-        <h3><a href="/edit_band.html/{{ band.id }}">Edit Band</a></h3>
-        <button class="btn btn-danger btn-lg" data-bs-toggle="modal"
+        <button type="button" class="band-btn btn btn-signup btn-lg" data-bs-dismiss="modal">
+            <a class="btn-signup" href="/edit_band.html/{{ band.id }}">Edit Band</a>
+        </button>
+    
+        <button class="band-btn btn btn-danger btn-lg" data-bs-toggle="modal"
                 data-bs-target="#deleteModal{{ band.id }}">Delete Band</button>
         <!-- <h3><a href="/delete_band.html/{{ band.id }}">Delete Band</a></h3> -->
         {% endif %}
@@ -82,7 +85,7 @@
     </div>
     {% else %}
     <h3>Add Your Band Below <i class="fa fa-arrow-down"></i></h3>
-    <p>Posted by: {{ user.username }}</p>
+    <!--<p> {{ user.username }}</p>-->
     <form enctype="multipart/form-data" method="post" style="margin-top: 1.3em;">
         {{ band_form | crispy }}
         {% csrf_token %}

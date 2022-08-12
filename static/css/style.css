@@ -187,14 +187,10 @@ h4 {
     margin-top: 5px;
 }
 
-.band {
-    
-    color: ;
-}
 
 .sign {
     background-color: #31313B;
-    width: 30%;
+    width: 40%;
     margin: auto; 
     padding: 2%;
     border-radius: 5%;
@@ -215,11 +211,15 @@ h4 {
     color: antiquewhite;
 }
 
+#id_band_bio.textarea {
+   width: 90%;
+}
 
-
-
-
-
+.band-btn {
+display: block;
+margin: auto;
+margin-bottom: 10px;
+}
 
 /*media queries*/
 
@@ -245,4 +245,11 @@ h4 {
 
 .modal {
     color: black;
+}
+
+/*form responsiveness*/
+@media screen and (max-width: 750px) {
+#add-band-form{
+    width: 70%;
+}
 }

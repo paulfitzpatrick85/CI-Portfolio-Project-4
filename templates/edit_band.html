@@ -1,11 +1,10 @@
 {% extends "base.html" %}
-
 {% block content %}
 
 {% load crispy_forms_tags%}
 
 
-<div class="center-contents sign">
+<div class="center-contents sign band-forms">
     <h2>edit page</h2>
     {% if user.is_authenticated %}
     <form enctype="multipart/form-data" method="post" style="margin-top: 1.3em;">
@@ -14,6 +13,7 @@
         <button type="submit" class="btn btn-signup btn-lg">edit My Band!</button>
     </form>
     {% endif %}
-</div>
+</div> 
+
 
 {%endblock%}

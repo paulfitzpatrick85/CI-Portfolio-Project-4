@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from .models import Genre, Band
 from .forms import BandForm
-from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
 
 
 class GenreList(generic.ListView):
@@ -29,14 +29,12 @@ class GenreDetail(View):
             },
         )
 
-
     def post(self, request, slug, *args, **kwargs):    
         queryset = Genre.objects.filter(status=1)   
         genre = get_object_or_404(queryset, slug=slug)  
         bands = genre.bands.filter(band_approved=True)
         band_form = BandForm(data=request.POST)
         
-
         if request.method == 'POST':                          
             band_form = BandForm(request.POST, request.FILES)          
         if band_form.is_valid():
@@ -45,12 +43,13 @@ class GenreDetail(View):
             band = band_form.save(commit=False)
             band.genre = genre
             band.save()
+            #return HttpResponseRedirect("/")
         else:
             band_form = BandForm() 
 
         return render(
             request,            
-            "add_band.html",       
+            "genre_detail.html",       
             {
                 "genre": genre,          
                 "bands": bands,
@@ -69,7 +68,8 @@ def edit_band(request, band_id):
         band_form = BandForm(data=request.GET)
         
         if request.method == 'POST':                          
-            band_form = BandForm(request.POST, request.FILES, instance=band)   # populate with existing data    
+            band_form = BandForm(request.POST, request.FILES, 
+                                 instance=band) 
             if band_form.is_valid():
                 band_form.instance.band_email = request.user.email
                 band_form.instance.band_name = request.user.username
@@ -86,12 +86,12 @@ def edit_band(request, band_id):
                 band_form = BandForm(initial=data) 
                 
         context = {"band_form": BandForm(instance=band)}
-        return render(request, 'edit_band.html', context)
+        return render(request, 'edit_band.html', context, )
 
 
 def delete_band(request, band_id):
     band = get_object_or_404(Band, id=band_id)
-    # Authenticated usercan delete only their own bands
+    # Authenticated user can delete only their own bands
     if band.band_email != request.user.email: 
         return redirect('/')
     else:

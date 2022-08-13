@@ -1,6 +1,5 @@
-from .models import Genre, Band
+from .models import Band
 from django import forms
-from django.forms import ModelForm
 
 
 class DateInput(forms.DateInput):
@@ -10,9 +9,10 @@ class DateInput(forms.DateInput):
 class BandForm(forms.ModelForm):
     class Meta:
         model = Band
-        fields = ('band_image', 'band_name', 'band_email', 'band_bio', 'next_gig', 'concert_venue')
+        fields = ('band_image',
+                  'band_name',
+                  'band_email',
+                  'band_bio',
+                  'next_gig',
+                  'concert_venue')
         widgets = {'next_gig': DateInput(), }
-     
-
-
-# entire file may not be required

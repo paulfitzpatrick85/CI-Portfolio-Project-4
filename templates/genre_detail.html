@@ -17,7 +17,7 @@
         <h2 id="border">
             Check Out Bands From The Local {{ genre.genre_name }} Scene Below
         </h2>
-        <h3><a href="#add-band-form">Click Here Add Your Band</a></h3>
+        <h3><a href="#band-forms">Click Here Add Your Band</a></h3>
     </div>
 </div>
 
@@ -35,15 +35,15 @@
     <h3>{{ band.band_name }} </h3>
     <p>bio here: {{ band.band_bio }}<p>
         <h6>Next Live Performance: {{ band.next_gig }} at {{ band.concert_venue }}</h6>
-        <!--EDIT BAND BUTTON if logged in-->
+
+        <!--edit band button if logged in-->
         {% if user.is_authenticated %}
         <button type="button" class="band-btn btn btn-signup btn-lg" data-bs-dismiss="modal">
             <a class="btn-signup" href="/edit_band.html/{{ band.id }}">Edit Band</a>
         </button>
-    
+        <!--delete Bband button if logged in-->
         <button class="band-btn btn btn-danger btn-lg" data-bs-toggle="modal"
                 data-bs-target="#deleteModal{{ band.id }}">Delete Band</button>
-        <!-- <h3><a href="/delete_band.html/{{ band.id }}">Delete Band</a></h3> -->
         {% endif %}
 </div>
 
@@ -59,6 +59,7 @@
             </div>
             <div class="modal-body">
                 Are you sure you want to delete your band?
+                This action cannot be undone.
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-signup btn-lg" data-bs-dismiss="modal">Cancel</button>
@@ -76,14 +77,17 @@
 {% endfor %}
  
 
-<!--add band form and approval pending message-->
+<!--approval pending message-->
 {% if user.is_authenticated %}
-<div id="add-band-form" class="sign">
+<div id="band-forms" class="sign">
     {% if band_added %}
     <div class="alert alert-success" role="alert">
         Your profile will be added once our admin give it the once over!
+        <button ><a href=''>Please Click here to refresh the page without submitting your band twice.</a></button>
     </div>
     {% else %}
+    
+    <!--add band form-->  
     <h3>Add Your Band Below <i class="fa fa-arrow-down"></i></h3>
     <!--<p> {{ user.username }}</p>-->
     <form enctype="multipart/form-data" method="post" style="margin-top: 1.3em;">

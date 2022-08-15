@@ -3,6 +3,8 @@ from django.views import generic, View
 from .models import Genre, Band
 from .forms import BandForm
 from django.http import HttpResponseRedirect
+from django.contrib import messages
+
 
 
 class GenreList(generic.ListView):
@@ -74,7 +76,8 @@ def edit_band(request, band_id):
                 band_form.instance.band_email = request.user.email
                 band_form.instance.band_name = request.user.username
                 band.save()
-                return redirect('/')
+                messages.success(request, 'band edited successfully')
+                #return redirect('/')
             else:
                 # Prepopulation happens here:
                 data = {"band_name": band.band_name,
@@ -84,7 +87,7 @@ def edit_band(request, band_id):
                         "next_gig": band.next_gig,
                         "concert_venue": band.concert_venue, }  
                 band_form = BandForm(initial=data) 
-                
+        #messages.success(request, 'band edited successfully')      
         context = {"band_form": BandForm(instance=band)}
         return render(request, 'edit_band.html', context, )
 
@@ -96,4 +99,5 @@ def delete_band(request, band_id):
         return redirect('/')
     else:
         band.delete()
+        messages.success(request, 'band deleted')
     return redirect('/')

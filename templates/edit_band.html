@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-
+{% load static %}
 {% load crispy_forms_tags%}
-
 
 <div class="center-contents sign band-forms">
     <h2>edit page</h2>
@@ -11,9 +10,9 @@
         {{ band_form | crispy }}
         {% csrf_token %}
         <button type="submit" class="btn btn-signup btn-lg">edit My Band!</button>
+        {{ message }}
     </form>
     {% endif %}
 </div> 
-
 
 {%endblock%}

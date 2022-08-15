@@ -41,7 +41,7 @@
         <button type="button" class="band-btn btn btn-signup btn-lg" data-bs-dismiss="modal">
             <a class="btn-signup" href="/edit_band.html/{{ band.id }}">Edit Band</a>
         </button>
-        <!--delete Bband button if logged in-->
+        <!--'delete band' button if logged in-->
         <button class="band-btn btn btn-danger btn-lg" data-bs-toggle="modal"
                 data-bs-target="#deleteModal{{ band.id }}">Delete Band</button>
         {% endif %}
@@ -63,7 +63,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-signup btn-lg" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-signup btn-lg"><a href="/delete_band.html/{{ band.id }}">Delete Band</a></button>   
+                <button type="button" class="btn btn-signup btn-lg"><a href="/delete_band.html/{{ band.id }}">Delete Band</a></button>
+                {{ message }}   
             </div>
         </div>
     </div> 

@@ -4,3 +4,6 @@ setTimeout(function() {
     alert.close();
 }, 2000);
         
+function edit() {
+    alert("Your Band Information Has Been Updated./ You Can Now Return To Your Profile To View The Changes.");
+}

@@ -17,6 +17,7 @@
         <h2 id="border">
             Check Out Bands From The Local {{ genre.genre_name }} Scene Below
         </h2>
+        {% if user.is_authenticated %}
         <h3><a href="#band-forms">Click Here Add Your Band</a></h3>
     </div>
 </div>
@@ -97,7 +98,7 @@
         <button type="submit" class="btn btn-signup btn-lg">Add My Band!</button>
     </form>
 </div>
-
+{% endif %}
 {% endif %}
 {% endif %}
 {% endblock content %}

@@ -45,7 +45,7 @@ class GenreDetail(View):
             band = band_form.save(commit=False)
             band.genre = genre
             band.save()
-            #return HttpResponseRedirect("/")
+            return HttpResponseRedirect("/")
         else:
             band_form = BandForm() 
 
@@ -76,7 +76,7 @@ def edit_band(request, band_id):
                 band_form.instance.band_email = request.user.email
                 band_form.instance.band_name = request.user.username
                 band.save()
-                messages.success(request, 'band edited successfully')
+                messages.success(request, 'Your Band Details Were Edited Successfully. Return To Your Chosen Catagory to View Your Profile.')
                 #return redirect('/')
             else:
                 # Prepopulation happens here:
@@ -99,5 +99,5 @@ def delete_band(request, band_id):
         return redirect('/')
     else:
         band.delete()
-        messages.success(request, 'band deleted')
+        messages.success(request, 'Your Band Has Been Deleted From Unsigned Ireland.')
     return redirect('/')

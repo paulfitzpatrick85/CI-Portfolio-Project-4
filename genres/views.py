@@ -45,7 +45,7 @@ class GenreDetail(View):
             band = band_form.save(commit=False)
             band.genre = genre
             band.save()
-            return HttpResponseRedirect("/")
+            #return HttpResponseRedirect("/")
         else:
             band_form = BandForm() 
 

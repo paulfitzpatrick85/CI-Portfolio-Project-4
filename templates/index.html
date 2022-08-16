@@ -2,30 +2,26 @@
 <div class="blcon"></div>
 {% block content %}
 <!-- <div>message here {{ message }}</div> -->
-    <div class="genre">  <!--hide this in media query-->
-        <div>
-            {% for genre in genre_list %}
-            <img class="centre" id="genre-image" src="{{ genre.genre_image.url }}">
-            <hr>
-                <a href="{% url 'genre_detail' genre.slug %}">
-                    <h2 class="link-text">{{ genre.genre_name }}</h2>
-                    <hr><hr><hr>
-                </a> 
-            
-            {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    
+<div class="genre">
+    <!--hide this in media query-->
+    <div>
+        {% for genre in genre_list %}
+        <img class="centre image-border" id="genre-image" src="{{ genre.genre_image.url }}">
+
+        <a href="{% url 'genre_detail' genre.slug %}">
+            <h2 class="link-text mt-3">{{ genre.genre_name }}</h2>
+        </a>
+        <hr>
+        <hr>
+
+        {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div>
+        {% endif %}
+        {% endfor %}
     </div>
 
-
-
-
-
-
+</div>
 
 {% endblock %}
 

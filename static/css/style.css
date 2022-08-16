@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Condensed:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Rubik+Distressed&display=swap');
 /* body {
     background-color: #F9FAFC;
 }
@@ -135,13 +135,13 @@ a {
     border: none;
 } */
 body {
-    background-color: black;
-    color: antiquewhite;
+    background-color: rgba(227,227,227,255);
+    color: black;
     font-family: Roboto Condensed;
 }
 
 .link-text {
-    color: antiquewhite;
+    color: black;
 }
 
 .nav-item {
@@ -150,7 +150,6 @@ body {
 
 .nav-item:hover,
 .nav-item:active {
-    color: #445261;
     text-decoration: underline;
 }
 
@@ -167,27 +166,30 @@ i.fa.fa-bars::before {
   .title {
     text-align: center;
     height: 50px;
-    font-family: Permanent Marker;
+    font-family: Rubik Distressed;
     font-size: 50px;
     margin: 5%;
   }
 
 /*line break used as spacer between genre, as other css won't work, line itself hidden*/
 hr {
-  color: black;  
+  color: rgba(227,227,227,255);  
 }
 
 h4 {
-    font-family: Permanent Marker;
+    font-family: Rubik Distressed;
     text-align: center;
     margin: 5%;
 }
 
-.navbar-toggler-icon {
+/* .navbar-toggler-icon {
     color: antiquewhite;
-}
+} */
 
 /*genre_detail.html*/
+.image-border {
+    border: #445261 solid 5px;
+}
 
 .center-contents {
     text-align: center;
@@ -198,13 +200,14 @@ h4 {
     margin-top: 5px;
 }
 
-
+/*log in, signup log out boxes*/
 .sign {
     background-color: #31313B;
     width: 40%;
     margin: auto; 
     padding: 2%;
     border-radius: 5%;
+    color: antiquewhite;
 }
 
 .sign-heading {
@@ -234,6 +237,12 @@ margin-bottom: 10px;
 
 .msg-box {
     width: 60%;
+}
+
+.footer-links {
+    font-size: 20px;
+    padding:2%;
+    color: black;
 }
 
 /*media queries*/

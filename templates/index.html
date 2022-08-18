@@ -1,15 +1,17 @@
 {% extends "base.html" %}
 <div class="blcon"></div>
 {% block content %}
-<!-- <div>message here {{ message }}</div> -->
+{% load static %}
+
 <div class="genre">
     <!--hide this in media query-->
     <div>
+        
         {% for genre in genre_list %}
-        <img class="centre image-border" id="genre-image" src="{{ genre.genre_image.url }}">
-
+        
         <a href="{% url 'genre_detail' genre.slug %}">
-            <h2 class="link-text mt-3">{{ genre.genre_name }}</h2>
+        <img class="centre hover-border image-border" id="genre-image" src="{{ genre.genre_image.url }}">
+        <h2 class="link-text mt-3">{{ genre.genre_name }}</h2>
         </a>
         <hr>
         <hr>

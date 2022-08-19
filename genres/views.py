@@ -1,15 +1,14 @@
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from .models import Genre, Band
 from .forms import BandForm
-from django.http import HttpResponseRedirect
+# from django.http import HttpResponseRedirect
 from django.contrib import messages
-
 
 
 class GenreList(generic.ListView):
     model = Genre
-    template_name = 'index.html'   
+    template_name = 'index.html'
     paginate_by = 6
 
 
@@ -45,7 +44,7 @@ class GenreDetail(View):
             band = band_form.save(commit=False)
             band.genre = genre
             band.save()
-            #return HttpResponseRedirect("/")
+            # return HttpResponseRedirect("/")
         else:
             band_form = BandForm() 
 
@@ -76,8 +75,11 @@ def edit_band(request, band_id):
                 band_form.instance.band_email = request.user.email
                 band_form.instance.band_name = request.user.username
                 band.save()
-                messages.success(request, 'Your Band Details Were Edited Successfully. Return To Your Chosen Catagory to View Your Profile.')
-                #return redirect('/')
+                messages.success(request, 
+                                 'Your Band Details Were Edited Successfully.'
+                                 'Return To Your Chosen Catagory to View Your '
+                                 'Profile.')
+                # return redirect('/')
             else:
                 # Prepopulation happens here:
                 data = {"band_name": band.band_name,
@@ -87,7 +89,7 @@ def edit_band(request, band_id):
                         "next_gig": band.next_gig,
                         "concert_venue": band.concert_venue, }  
                 band_form = BandForm(initial=data) 
-        #messages.success(request, 'band edited successfully')      
+        # messages.success(request, 'band edited successfully')      
         context = {"band_form": BandForm(instance=band)}
         return render(request, 'edit_band.html', context, )
 
@@ -99,5 +101,6 @@ def delete_band(request, band_id):
         return redirect('/')
     else:
         band.delete()
-        messages.success(request, 'Your Band Has Been Deleted From Unsigned Ireland.')
+        messages.success(request, 
+                         'Your Band Has Been Deleted From Unsigned Ireland.')
     return redirect('/')

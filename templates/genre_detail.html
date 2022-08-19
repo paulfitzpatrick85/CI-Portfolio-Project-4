@@ -20,8 +20,10 @@
         <hr>
         <hr>
         {% if user.is_authenticated %}
-        <button class="add-band-btn"><h3><a class="add-band-text" href="#band-forms">Click Here Add Your Band</a></h3></button>
-        
+        <button class="add-band-btn">
+            <h3><a class="add-band-text" href="#band-forms">Click Here Add Your Band</a></h3>
+        </button>
+
     </div>
 </div>
 {% endif %}
@@ -39,19 +41,20 @@
     <img class="image-border" src="{{ band.band_image.url }}" width="60%">
     {% endif %}
     <div class="band-text">
-    <h3>{{ band.band_name }} </h3>
-    <p >{{ band.band_bio }}<p>
-            <h6><strong>See {{ band.band_name }} Perform Live</strong>: {{ band.next_gig }} at {{ band.concert_venue }}</h6>
-        </div>
-            <!--edit band button if logged in-->
-            {% if user.is_authenticated %}
-            <button type="button" class="band-btn edit-btn btn btn-signup btn-lg" data-bs-dismiss="modal">
-                <a class="btn-signup" href="/edit_band.html/{{ band.id }}">Edit Band</a>
-            </button>
-            <!--'delete band' button if logged in-->
-            <button class="band-btn btn btn-danger btn-lg" data-bs-toggle="modal"
-                data-bs-target="#deleteModal{{ band.id }}">Delete Band</button>
-            {% endif %}
+        <h3>{{ band.band_name }} </h3>
+        <p>{{ band.band_bio }}<p>
+                <h6><strong>See {{ band.band_name }} Perform Live</strong>: {{ band.next_gig }} at
+                    {{ band.concert_venue }}</h6>
+    </div>
+    <!--edit band button if logged in-->
+    {% if user.is_authenticated %}
+    <button type="button" class="band-btn edit-btn btn btn-signup btn-lg" data-bs-dismiss="modal">
+        <a class="btn-signup" href="/edit_band.html/{{ band.id }}">Edit Band</a>
+    </button>
+    <!--'delete band' button if logged in-->
+    <button class="band-btn btn btn-danger btn-lg" data-bs-toggle="modal"
+        data-bs-target="#deleteModal{{ band.id }}">Delete Band</button>
+    {% endif %}
 </div>
 
 
@@ -92,7 +95,8 @@
     {% if band_added %}
     <div class="alert center-contents alert-success" role="alert">
         <h3>Your profile will be added once our admin give it the once over!</h3>
-        <button class="alert add-alert-btn band"><a id="add-alert" href=''><strong>Please Click here to refresh the page without submitting your band twice.</strong></a></button>
+        <button class="alert add-alert-btn band"><a id="add-alert" href=''><strong>Please Click here to refresh the page
+                    without submitting your band twice.</strong></a></button>
     </div>
     {% else %}
 
@@ -109,10 +113,3 @@
 {% endif %}
 {% endif %}
 {% endblock content %}
-
-
-
-
-
-
-

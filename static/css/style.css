@@ -1,28 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto+Condensed:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Rubik+Distressed&display=swap');
-/* 
 
-.post-link:hover,
-.page-link {
-    color: #E84610;
-}
-
-
-.btn-signup:hover,
-.btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
-}
-
-
-
-
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-} */
 body {
     background-color: rgba(227,227,227,255);
     color: black;
@@ -121,10 +99,6 @@ h4 {
     margin: 5%;
 }
 
-/* .navbar-toggler-icon {
-    color: antiquewhite;
-} */
-
 /*genre_detail.html*/
 
 .center-contents {
@@ -185,7 +159,9 @@ margin-bottom: 10px;
     color: black;
 }
 
-
+div.controls > a {
+    color: white;
+}
 
 /*media queries*/
 

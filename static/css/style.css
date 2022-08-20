@@ -76,12 +76,16 @@ i.fa.fa-bars::before {
     text-align: center;
   }
 
-  .title {
+  .title{
     text-align: center;
     height: 50px;
     font-family: Rubik Distressed;
     font-size: 50px;
     margin: 5%;
+  }
+
+  .local-band-text {
+    font-family: Rubik Distressed;
   }
 
   #add-alert:hover {
@@ -179,17 +183,16 @@ div.controls > a {
     }
 }
 
-@media screen and (max-width: 483px) {
-.title {
-    height: 100px;
+@media screen and (max-width: 509px) {
+    .title {
+        height: 110px;
+        }
     }
-}
 
 .modal {
     color: black;
 }
 
-/*form responsiveness*/
 @media screen and (max-width: 750px) {
 .band-forms{
     width: 70%;

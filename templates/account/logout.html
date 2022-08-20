@@ -5,7 +5,7 @@
 {% block head_title %}{% trans "Log Out" %}{% endblock %}
 
 {% block content %}
-<div class="sign">
+<div class="sign band-forms">
 <h1 class="text-white">{% trans "Log Out" %}</h1>
 
 <p>{% trans 'Are you sure you want to Log out?' %}</p>
@@ -15,7 +15,7 @@
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
   {% endif %}
-  <button type="submit">{% trans 'Log Out' %}</button>
+  <button class="btn btn-signup" type="submit">{% trans 'Log Out' %}</button>
 </form>
 </div>
 

@@ -32,8 +32,8 @@ class Band(models.Model):
     band_image = CloudinaryField('image', default='placeholder')
     next_gig = models.TextField(default='DD-MM-YYYY')
     concert_venue = models.CharField(max_length=30, default='TBA')
-    status = models.IntegerField(choices=STATUS, default=0)  
-    band_approved = models.BooleanField(default=False)  
+    status = models.IntegerField(choices=STATUS, default=0) 
+    band_approved = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.band_name 
+        return self.band_name

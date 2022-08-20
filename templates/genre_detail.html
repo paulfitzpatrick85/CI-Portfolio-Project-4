@@ -8,13 +8,13 @@
     <div>
         {% if genre.genre_image|stringformat:'s'  == "placeholder" %}
         <img src="https://res.cloudinary.com/paulfitz85/image/upload/v1659219337/media/images/default_genre_photo_acacvw.jpg"
-            width="50%">
+            width="50%" alt="image of music catagory">
         {% else %}
-        <img class="image-border" src="{{ genre.genre_image.url }}" width="50%">
+        <img class="image-border" src="{{ genre.genre_image.url }}" width="50%" alt="image of music catagory">
         {% endif %}
     </div>
     <div class="center-contents genre-heading-text">
-        <h2 id="border">
+        <h2 class="local-band-text">
             Check Out Bands From The Local {{ genre.genre_name }} Scene Below
         </h2>
         <hr>
@@ -36,9 +36,9 @@
     {% if band.band_image|stringformat:'s'  == "placeholder" %}
     <img class="image-border"
         src="https://res.cloudinary.com/paulfitz85/image/upload/v1659219337/media/images/default_genre_photo_acacvw.jpg"
-        width="60%">
+        width="60%" alt=" default image of band">
     {% else %}
-    <img class="image-border" src="{{ band.band_image.url }}" width="60%">
+    <img class="image-border" src="{{ band.band_image.url }}" width="60%" alt="uploaded image of band">
     {% endif %}
     <div class="band-text">
         <h3>{{ band.band_name }} </h3>
@@ -85,7 +85,7 @@
 
 <!--display message when no bands have been added to genre yet-->
 {% empty %}
-<h3 class="center-contents">Be the first to add a band!</h3>
+<h3 class="center-contents local-band-text">Be the first to add a band!</h3>
 {% endfor %}
 
 

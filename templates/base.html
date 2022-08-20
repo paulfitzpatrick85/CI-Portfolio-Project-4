@@ -1,23 +1,25 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html class="h-100">
+<html class="h-100" lang="en">
 
 <head>
     <title>Unsigned Ireland</title>
-    
+
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Unsigned Ireland is a site for musicians to create a profile for their act.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
@@ -30,7 +32,7 @@
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 ">
                     <li class="nav-item">
@@ -47,7 +49,7 @@
                     <li class="nav-item">
                         <a class="nav-link link-text" href="{% url 'account_login' %}">Login</a>
                     </li>
-                    
+
                     {% endif %}
                 </ul>
                 {% if user.is_authenticated %}
@@ -69,11 +71,15 @@
 
 
     <div>
-        <a href="{% url 'home' %}"><h1 class="title">Unsigned Ireland</h1></a>
-        
-        <div><h4><i>A Place For Unsigned Bands To Show What They're Doin' & Where They're Playin'</i></h4></div>
+        <a href="{% url 'home' %}">
+            <h1 class="title">Unsigned Ireland</h1>
+        </a>
+
+        <div>
+            <h4><i>A Place For Unsigned Bands To Show What They're Doin' & Where They're Playin'</i></h4>
+        </div>
     </div>
-    
+
 
     <main class="flex-shrink-0 main-bg">
         {% block content %}
@@ -83,10 +89,14 @@
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-black "> <a class="footer-links" href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facbook page (open in a new tab)"><i class="fab fa-facebook"></i>
-            <a class="footer-links" href="https://Twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter page (open in a new tab)"><i class="fab fa-twitter"></i>
-                <a class="footer-links" href="https://Instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (open in a new tab)"><i class="fab fa-instagram"></i>
-            <a class="footer-links" href="https://Youtube.com" target="_blank" rel="noopener" aria-label="Visit our Youtube page (open in a new tab)"><i class="fab fa-youtube"></i></p>
+        <p class="m-0 text-center text-black "> <a class="footer-links" href="https://facebook.com" target="_blank"
+                rel="noopener" aria-label="Visit our Facbook page (open in a new tab)"><i class="fab fa-facebook"></i>
+                <a class="footer-links" href="https://Twitter.com" target="_blank" rel="noopener"
+                    aria-label="Visit our Twitter page (open in a new tab)"><i class="fab fa-twitter"></i>
+                    <a class="footer-links" href="https://Instagram.com" target="_blank" rel="noopener"
+                        aria-label="Visit our Instagram page (open in a new tab)"><i class="fab fa-instagram"></i>
+                        <a class="footer-links" href="https://Youtube.com" target="_blank" rel="noopener"
+                            aria-label="Visit our Youtube page (open in a new tab)"><i class="fab fa-youtube"></i></p>
     </footer>
 
     <script src="{% static 'js/script.js' %}"></script>

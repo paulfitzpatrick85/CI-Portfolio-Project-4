@@ -14,14 +14,14 @@ class GenreList(generic.ListView):
 
 class GenreDetail(View):
 
-    def get(self, request, slug, *args, **kwargs):    
-        queryset = Genre.objects.filter(status=1)   
-        genre = get_object_or_404(queryset, slug=slug)  
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Genre.objects.filter(status=1)
+        genre = get_object_or_404(queryset, slug=slug)
         bands = genre.bands.filter(band_approved=True)
 
         return render(
-            request,            
-            "genre_detail.html",       
+            request,     
+            "genre_detail.html",      
             {
                 "genre": genre,          # render dictionary
                 "bands": bands,

@@ -23,7 +23,7 @@ Github user storys url: https://github.com/users/paulfitzpatrick85/projects/9
 
 ![nar bar mobile](https://user-images.githubusercontent.com/55660566/185744303-dfc02fbd-98a8-4414-bab4-093bb934d307.png)
 
-If the user chooses to register an account they are required to provide a user name, an email which will be used to match them to the profiles they have created if they try to edit a previously added band profile. And lastly a password. If the user already has an account, the option to login is built into the form to save the user returning to the home page to select login from the menu, and vice versa, that if a use trys to login without an account the option to navigate to the register page is also in the login form.
+If the user chooses to register an account they are required to provide a user name, an email which will be used to match them to the profiles they have created if they try to edit a previously added band profile, and lastly a password. If the user already has an account, the option to login is built into the form to save the user returning to the home page to select login from the menu, and vice versa, that if a use trys to login without an account the option to navigate to the register page is also in the login form.
 
 ![signup](https://user-images.githubusercontent.com/55660566/185745664-7b43f1bd-deab-4f6e-a6ea-90911c6ef0c0.png)
 ![log in](https://user-images.githubusercontent.com/55660566/185745743-6d5fb1e1-ea0f-419a-a2b4-47fa94951d55.png)
@@ -35,12 +35,40 @@ The details should they be needed are as follows:
 
 + username: testuser2, email: user2@gmail.com, password: testpassword2
 
-Once the user has registered, a message is displayed to the user informing them they are logged in, this same message appears for all user login's. 
++ Admin/superuser details to view/approve band entries: username: bandadmin1, email: fitzer99@gmail.com, password: passwordband1
+
+Once the user has registered, a message is displayed to the user informing them they have successfully logged in, this same message appears for all user login's.
 
 ![login message](https://user-images.githubusercontent.com/55660566/185745525-3c8b2e11-82ae-4b61-809d-98b8b15c623c.png)
 
+The user's login status is displayed in the top right on full screen format, and on smaller screens, the status is found it the drop down menu.
 
+![logged in as](https://user-images.githubusercontent.com/55660566/185764029-ad4839c3-71f4-46fc-9bf9-752fbe8cbb7a.png)
 
+![logged in as mobile](https://user-images.githubusercontent.com/55660566/185764032-21557868-4e70-41ea-bd09-cd7c01b60e55.png)
+
+When the user is logged in and navigates to their chosen genre of the six provided on the home page, there they will find a link/button that will bring them to a form to fill in their band's details which includes a date picker widget for the bands next live performance, and the option to upload a photo, if a photo is not provided by the user, a default image will be displayed in its place. If the chosen genre has no other band profiles, a message is displayed saying 'Be the first to add a band!', this message is removed once a band proflie is added and approved.
+
+![add band page](https://user-images.githubusercontent.com/55660566/185764418-8ce44fcf-c04f-4764-a203-4b12448873fd.png)
+
+Once the user click the 'Click here to add your band' button, they are brought to the bottom of the page to the form to be filled out.
+
+![add band form](https://user-images.githubusercontent.com/55660566/185764500-ff3de277-9148-42fd-805d-dc25c33308a2.png)
+
+When the 'add my band' button is click the form is submitted for approval by the admin and the user is shown a message telling them their form must be reviewed before it is displayed in the chosen genre section.To prevent a duplicate form being submitted on refresh of the page, the user is prompted to click a link in the message which is simply an empty anchor tag with an empty href, when clicked the message disappears and if the user should eventually refresh the page, the form is not re-submitted.
+
+![add band pending](https://user-images.githubusercontent.com/55660566/185765710-ca88a5d3-c3eb-401c-b815-3dc988cb85f8.png)
+
+In the Admin panel, access by adding '/admin' to the home page url, and once logged in as the admin/superuser, the admin can view the details added, including the image if provided, in the submitted form. If all details are found to be okay to be displayed on the site, the admin can change the band's status from draft to published, and tick the 'approve' check box.
+
+![admin form detail 1](https://user-images.githubusercontent.com/55660566/185765955-3de878b8-b897-4058-8411-0da92190dd78.png)
+![admin form detail 2](https://user-images.githubusercontent.com/55660566/185765958-972ef756-3d8a-434c-a47d-4ed33bfa24a5.png)
+![admin form detail 3](https://user-images.githubusercontent.com/55660566/185765959-b2074da3-b177-43ab-a27b-e10873500570.png)
+![admin approve band ](https://user-images.githubusercontent.com/55660566/185765962-bb3d8d32-6ed9-44a8-bf0d-4727595d0965.png)
+
+On return to the webpage, logged in as the band profile creator, the profile is displayed in the chosen genre page along with two button, 'edit band' and 'delete band'.
+
+![testband 1profile example](https://user-images.githubusercontent.com/55660566/185766198-183059c2-5e45-4988-abe7-b6cf199bd353.png)
 
 ## Code Validation
 ### Files for PEP8 validation checked through http://pep8online.com/

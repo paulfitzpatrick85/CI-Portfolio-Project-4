@@ -51,7 +51,7 @@ When the user is logged in and navigates to their chosen genre of the six provid
 
 ![add band page](https://user-images.githubusercontent.com/55660566/185764418-8ce44fcf-c04f-4764-a203-4b12448873fd.png)
 
-Once the user click the 'Click here to add your band' button, they are brought to the bottom of the page to the form to be filled out.
+Once the user click the 'Click here to add your band' button, they are brought to the bottom of the page to the form to be filled out, all fields are required to be filled.
 
 ![add band form](https://user-images.githubusercontent.com/55660566/185764500-ff3de277-9148-42fd-805d-dc25c33308a2.png)
 
@@ -59,16 +59,42 @@ When the 'add my band' button is click the form is submitted for approval by the
 
 ![add band pending](https://user-images.githubusercontent.com/55660566/185765710-ca88a5d3-c3eb-401c-b815-3dc988cb85f8.png)
 
-In the Admin panel, access by adding '/admin' to the home page url, and once logged in as the admin/superuser, the admin can view the details added, including the image if provided, in the submitted form. If all details are found to be okay to be displayed on the site, the admin can change the band's status from draft to published, and tick the 'approve' check box.
+In the Admin panel, accessed by adding '/admin' to the end of the home page url, and once logged in as the admin/superuser, the admin can view the details added, including the image if provided, in the submitted form. If all details are found to be okay to be displayed on the site, the admin can change the band's status from draft to published, and tick the 'approve' check box.
 
 ![admin form detail 1](https://user-images.githubusercontent.com/55660566/185765955-3de878b8-b897-4058-8411-0da92190dd78.png)
 ![admin form detail 2](https://user-images.githubusercontent.com/55660566/185765958-972ef756-3d8a-434c-a47d-4ed33bfa24a5.png)
 ![admin form detail 3](https://user-images.githubusercontent.com/55660566/185765959-b2074da3-b177-43ab-a27b-e10873500570.png)
 ![admin approve band ](https://user-images.githubusercontent.com/55660566/185765962-bb3d8d32-6ed9-44a8-bf0d-4727595d0965.png)
 
-On return to the webpage, logged in as the band profile creator, the profile is displayed in the chosen genre page along with two button, 'edit band' and 'delete band'.
+On return to the webpage, logged in as the band profile creator, the profile is displayed in the chosen genre page along with two buttons, 'edit band' and 'delete band'.
 
 ![testband 1profile example](https://user-images.githubusercontent.com/55660566/185766198-183059c2-5e45-4988-abe7-b6cf199bd353.png)
+
+To edit a bands details, only the user and creator of the profile, can click the 'edit band' button which will bring them to a new page where they can see a form prepopulated with the information they origanally inputted, along with a link to view their current band photo.
+
+![edit form](https://user-images.githubusercontent.com/55660566/185779258-6f31d6e0-b0a9-4d7e-bb6e-6c48c12ff2ae.png)
+
+Link when follewed to current band image.
+
+![band image link](https://user-images.githubusercontent.com/55660566/185779514-dc397182-7012-40f5-9afd-27b23356befa.png)
+
+The user can then change one or all fields as required, not all are required as before. (in this example the biography, next gig date and image have been edited.)
+
+![edit form edited](https://user-images.githubusercontent.com/55660566/185779332-d4e5c9fe-61b9-41b5-b9bc-4284b92072b0.png)
+
+Once the user is finished making changes and clicks 'edit my band', the form is submitted and a message is displayed to the user informing them their details have been edited and they should return to the profile location to view the changes.
+
+![edit success message](https://user-images.githubusercontent.com/55660566/185779446-e8661c08-2c33-485f-bb09-7dc14688f6f3.png)
+
+Once back in the genre section the user added their in, they can see the updated profile.
+
+![edited band](https://user-images.githubusercontent.com/55660566/185779536-9570c76e-fb2e-44a9-9c66-284fbd689daa.png)
+
+
+
+
+### Authentication
+If a another user is logged in, for example testuser2, and trys to edit the band profile created by testuser1, upon clicking the edit buttton, testuser2 is redirected to the home page, if 'delete band' is clicked, the delete modal will open as the first 'delete band' button is only a link to the modal, but if the 'delete band' button is clicked in the modal to confirm deletion, testuser2 is redirected to the home page and no deletion occurs.
 
 ## Code Validation
 ### Files for PEP8 validation checked through http://pep8online.com/

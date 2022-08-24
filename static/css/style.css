@@ -183,7 +183,7 @@ div.controls > a {
     }
 }
 
-@media screen and (max-width: 509px) {
+@media screen and (max-width: 517px) {
     .title {
         height: 110px;
         }

@@ -151,13 +151,17 @@ This file displayed a number of warnings regarding 'trailing whitespace', though
 ![lighthouse](https://user-images.githubusercontent.com/55660566/185743809-a3a65569-0b3f-4152-8d55-d792a1979eef.png)
 
 
-credits
+## Credits
++ All photos from pexels.com
 
-I used the walkthrough 'I think thereforew I blog as a template for my site, using its structure to suits my sites needs and changing the code to get what i needed done'. the following code was taken and unchanged: nav section of base.html
++ The code for the navbar was taken from the 'I think therefore I blog' walkthrough navbar section of the base.html file and only changed very slightly.
 
-post function in views.py -  if statement based on same in blog project
++ Also from the walkthrough I used as a template from the 'class PostDetail', the 'def get' and 'def post' functions as I want to mimic how a comment can be related to a particular post, that a band profile could be related to a particular genre/catagory. The code was changed to suit my sites needs, a quick comparison is of each is shown below, my code being that on the left in both screen shots.
 
-all photos from pexels.com
+![class compare](https://user-images.githubusercontent.com/55660566/186520286-5e55abf0-bdce-4e85-8f27-eb272e6a0441.png)
+
+![def genre-post](https://user-images.githubusercontent.com/55660566/186520297-c6627bed-7b13-4a2a-9909-a76dc21da60e.png)
+
 
 # original mock up sketches
 
@@ -165,6 +169,12 @@ all photos from pexels.com
 ![pp4 mock-up 2](https://user-images.githubusercontent.com/55660566/185733816-06c8c9f6-5bcd-4459-a33f-b2e99a30b1ba.jpg)
 ![pp4 mock-up 3](https://user-images.githubusercontent.com/55660566/185733819-4ca6197e-3f29-4810-a21e-5fd995851bb6.jpg)
 
-ongoing bugs:
-after adding band, user has to navagate to home then back to genre page to check for added profile.
-edit form not prepopulating
++ The third mockup/sketch was intended to be a separate page with only live performance information from all added bands, but I decided to keep the live preformance on each bands profile so the user doesn't need to leave a bands profile to find more information on them in another location.
+
+## ongoing bugs:
+checking 'current image', if placeholder, will direct to wrong broken link/url , even though default image showing from correct url
+
+
+to add:
+log out message
+js testing

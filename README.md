@@ -2,6 +2,8 @@
 
 Unsigned Ireland is a website which allows users to add a profile of their band or solo act to the site's database, to be seen by all visitors to the site. The user, once registered, can upload an image of their band along with a biography and information on their next live performance. This information once approved, can be edited or deleted by the user who created it.
 
+You can view the live site here https://ci-pp4-unsigned-ireland.herokuapp.com/
+
 ------------------AM I REPONSIVE IMAGE-------------------------
 
 ## User Storys

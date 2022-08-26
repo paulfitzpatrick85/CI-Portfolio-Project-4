@@ -9,7 +9,7 @@
         {% for genre in genre_list %}
         
         <a href="{% url 'genre_detail' genre.slug %}">
-        <img class="centre hover-border image-border" id="genre-image" src="{{ genre.genre_image.url }}" alt="image of music catagory">
+        <img class="centre hover-border image-border" class="genre-image" src="{{ genre.genre_image.url }}" alt="image of music catagory">
         <h2 class="link-text mt-3">{{ genre.genre_name }}</h2>
         </a>
         <hr>

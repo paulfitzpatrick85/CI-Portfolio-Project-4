@@ -178,7 +178,7 @@ div.controls > a {
 }
 
 @media screen and (max-width: 550px) {
-#genre-image {
+.genre-image {
     width: 75%;
     }
 }

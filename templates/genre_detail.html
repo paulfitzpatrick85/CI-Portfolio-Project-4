@@ -33,9 +33,9 @@
 <!--display users band info once form is approved-->
 {% for band in bands %}
 <div class="center-contents band">
-    {% if band.band_image|stringformat:'s'  == "placeholder" %}
+    {% if band.band_image|stringformat:'s'  == "placeholder_ex9qjl.jpg" %}
     <img class="image-border"
-        src="https://res.cloudinary.com/paulfitz85/image/upload/v1659219337/media/images/default_genre_photo_acacvw.jpg"
+        src="https://res.cloudinary.com/paulfitz85/image/upload/v1661539142/placeholder_ex9qjl.jpg"
         width="60%" alt=" default image of band">
     {% else %}
     <img class="image-border" src="{{ band.band_image.url }}" width="60%" alt="uploaded image of band">

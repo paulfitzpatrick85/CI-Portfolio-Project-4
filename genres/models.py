@@ -14,7 +14,7 @@ class Genre(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE,
                                related_name='genre_section')
     content = models.TextField()
-    genre_image = CloudinaryField('image', default='placeholder')
+    genre_image = CloudinaryField('image', default='placeholder_ex9qjl.jpg')
     excerpt = models.TextField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
     approved = models.BooleanField(default=False)
@@ -29,7 +29,7 @@ class Band(models.Model):
     band_name = models.CharField(max_length=80)
     band_email = models.EmailField()
     band_bio = models.TextField()
-    band_image = CloudinaryField('image', default='placeholder')
+    band_image = CloudinaryField('image', default='placeholder_ex9qjl.jpg')
     next_gig = models.TextField(default='DD-MM-YYYY')
     concert_venue = models.CharField(max_length=30, default='TBA')
     status = models.IntegerField(choices=STATUS, default=0) 

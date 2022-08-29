@@ -1,10 +1,10 @@
 # Unsigned Ireland
 
-Unsigned Ireland is a website which allows users to add a profile of their band or solo act to the site's database, to be seen by all visitors to the site. The user, once registered, can upload an image of their band along with a biography and information on their next live performance. This information once approved, can be edited or deleted by the user who created it.
+Unsigned Ireland is a website which allows users to add a profile of their band to the site's database, to be seen by all visitors to the site. The user, once registered, can upload an image of their band along with a biography and information on their next live performance. This information once approved, can be edited or deleted by the user who created it.
 
 You can view the live site here https://ci-pp4-unsigned-ireland.herokuapp.com/
 
-------------------AM I REPONSIVE IMAGE-------------------------
+![responsive-image](https://user-images.githubusercontent.com/55660566/187290399-6a6b4085-6dd7-4e2c-bf9c-7839b6ed496e.png)
 
 ## User Storys
 Github user storys url: https://github.com/users/paulfitzpatrick85/projects/9
@@ -30,7 +30,7 @@ If the user chooses to register an account they are required to provide a user n
 ![signup](https://user-images.githubusercontent.com/55660566/185745664-7b43f1bd-deab-4f6e-a6ea-90911c6ef0c0.png)
 ![log in](https://user-images.githubusercontent.com/55660566/185745743-6d5fb1e1-ea0f-419a-a2b4-47fa94951d55.png)
 
-*I have setup profiles under two fictitious users to test with if an assessor wishes to use them and also for attemptiing to edit and delete the profiles they did not create themselves in order to test the authentication functionality when logged in as there own created user.
+*I have setup profiles under two fictitious users to test with if an assessor wishes to use them, and also so that an assessor can attempt to edit and delete the profiles they did not create themselves in order to test the authentication functionality when logged in as there own created user.
 
 The details should they be needed are as follows:
 + username: testuser1, email: user1@gmail.com, password: testpassword1
@@ -43,36 +43,38 @@ Once the user has registered, a message is displayed to the user informing them 
 
 ![login message](https://user-images.githubusercontent.com/55660566/185745525-3c8b2e11-82ae-4b61-809d-98b8b15c623c.png)
 
-The user's login status is displayed in the top right on full screen format, and on smaller screens, the status is found it the drop down menu.
+The user's login status is displayed in the top right on full screen format, and on smaller screens, the status is found in the drop down menu.
 
 ![logged in as](https://user-images.githubusercontent.com/55660566/185764029-ad4839c3-71f4-46fc-9bf9-752fbe8cbb7a.png)
 
 ![logged in as mobile](https://user-images.githubusercontent.com/55660566/185764032-21557868-4e70-41ea-bd09-cd7c01b60e55.png)
 
 When the user is logged in and navigates to their chosen genre of the six provided on the home page, there they will find a link/button that will bring them to a form to fill in their band's details which includes a date picker widget for the bands next live performance, and the option to upload a photo, if a photo is not provided by the user, a default image will be displayed in its place. If the chosen genre has no other band profiles, a message is displayed saying 'Be the first to add a band!', this message is removed once a band proflie is added and approved.
+The link/button to add a band does not display if a user is not logged in.
 
 ![add band page](https://user-images.githubusercontent.com/55660566/185764418-8ce44fcf-c04f-4764-a203-4b12448873fd.png)
+![not logged in-no add band](https://user-images.githubusercontent.com/55660566/187291937-df825ca9-47e3-4510-bac1-f4a9900dba01.png)
 
-Once the user click the 'Click here to add your band' button, they are brought to the bottom of the page to the form to be filled out, all fields are required to be filled.
+Once the user clicks the 'Click here to add your band' button, they are brought to the bottom of the page to the form to be filled out, all fields are required to be filled.
 
 ![add band form](https://user-images.githubusercontent.com/55660566/185764500-ff3de277-9148-42fd-805d-dc25c33308a2.png)
 
-When the 'add my band' button is click the form is submitted for approval by the admin and the user is shown a message telling them their form must be reviewed before it is displayed in the chosen genre section.To prevent a duplicate form being submitted on refresh of the page, the user is prompted to click a link in the message which is simply an empty anchor tag with an empty href, when clicked the message disappears and if the user should eventually refresh the page, the form is not re-submitted.
+When the user has finished filling out the form and the 'add my band' button is clicked, the form is submitted for approval by the admin and the user is shown a message telling them their form must be reviewed before it is displayed in the chosen genre section.To prevent a duplicate form being submitted on refresh of the page, the user is prompted to click a link in the message which is simply an empty anchor tag with an empty href, when clicked the message disappears and if the user should eventually refresh the page, the form is not re-submitted.
 
 ![add band pending](https://user-images.githubusercontent.com/55660566/185765710-ca88a5d3-c3eb-401c-b815-3dc988cb85f8.png)
 
-In the Admin panel, accessed by adding '/admin' to the end of the home page url, and once logged in as the admin/superuser, the admin can view the details added, including the image if provided, in the submitted form. If all details are found to be okay to be displayed on the site, the admin can change the band's status from draft to published, and tick the 'approve' check box.
+In the Admin panel, accessed by adding '/admin' to the end of the home page url, eg. 'https://ci-pp4-unsigned-ireland.herokuapp.com/admin' and once logged in as the admin/superuser, the admin can by navigate to the 'bands' tab to view the details added , including the image if provided, in the submitted form. If all details are found to be okay to be displayed on the site, the admin can change the band's status from draft to published, and tick the 'approve' check box.
 
 ![admin form detail 1](https://user-images.githubusercontent.com/55660566/185765955-3de878b8-b897-4058-8411-0da92190dd78.png)
 ![admin form detail 2](https://user-images.githubusercontent.com/55660566/185765958-972ef756-3d8a-434c-a47d-4ed33bfa24a5.png)
 ![admin form detail 3](https://user-images.githubusercontent.com/55660566/185765959-b2074da3-b177-43ab-a27b-e10873500570.png)
 ![admin approve band ](https://user-images.githubusercontent.com/55660566/185765962-bb3d8d32-6ed9-44a8-bf0d-4727595d0965.png)
 
-On return to the webpage, logged in as the band profile creator, the profile is displayed in the chosen genre page along with two buttons, 'edit band' and 'delete band'.
+On return to the webpage, the profile is displayed in the chosen genre section, and if logged in as user who created the band profile , two buttons, 'edit band' and 'delete band' will be displayed under the profile.
 
 ![testband 1profile example](https://user-images.githubusercontent.com/55660566/185766198-183059c2-5e45-4988-abe7-b6cf199bd353.png)
 
-To edit a bands details, only the user and creator of the profile, can click the 'edit band' button which will bring them to a new page where they can see a form prepopulated with the information they origanally inputted, along with a link to view their current band photo.
+To edit a bands details, only the user who created the profile can click the 'edit band' button which will bring them to a new page where they can see a form prepopulated with the information they origanally inputted, along with a link to view their current band photo.
 
 ![edit form](https://user-images.githubusercontent.com/55660566/185779258-6f31d6e0-b0a9-4d7e-bb6e-6c48c12ff2ae.png)
 
@@ -88,15 +90,25 @@ Once the user is finished making changes and clicks 'edit my band', the form is 
 
 ![edit success message](https://user-images.githubusercontent.com/55660566/185779446-e8661c08-2c33-485f-bb09-7dc14688f6f3.png)
 
-Once back in the genre section the user added their in, they can see the updated profile.
+Once back in the genre section the user added their profile in, they can see the updated profile.
 
 ![edited band](https://user-images.githubusercontent.com/55660566/185779536-9570c76e-fb2e-44a9-9c66-284fbd689daa.png)
 
+If the user chooses to delete their profile, they can click the 'delete band' button beneath their profile.
+upon clicking the button, a modal will open asking the user 'Are you sure you want to delete your band?' and a warning 'This action cannot be undone.' The user can then either cancel the action by clicking cancel or proceed withe the deletion and click 'delete'.
 
+![delete modal](https://user-images.githubusercontent.com/55660566/187296690-69238cd4-16e8-4cb7-a12b-d347852a56f2.png)
 
+When the user is finished using the site and clicks 'log out' for the top menu, they are logged out straight away. After logging out, a message is displayed to tell the user they are now logged out.
+
+![log out](https://user-images.githubusercontent.com/55660566/187297621-69531848-009d-4d1c-9442-4bf47dbf998d.png)
+
+![log out message](https://user-images.githubusercontent.com/55660566/187297634-cc85d559-bb42-44dd-ba14-f9bec6898224.png)
 
 ### Authentication
-If a another user is logged in, for example testuser2, and trys to edit the band profile created by testuser1, upon clicking the edit buttton, testuser2 is redirected to the home page, if 'delete band' is clicked, the delete modal will open as the first 'delete band' button is only a link to the modal, but if the 'delete band' button is clicked in the modal to confirm deletion, testuser2 is redirected to the home page and no deletion occurs.
+If a another user is logged in, for example testuser2, and trys to edit the band profile created by testuser1, upon clicking the edit buttton, testuser2 is redirected to the home page, if 'delete band' is clicked, the delete modal will open as the first 'delete band' button is only a link to the modal, but if the 'delete band' button is clicked inside the modal to confirm deletion, testuser2 is redirected to the home page and no deletion occurs.
+
+
 
 ## Code Validation
 ### Files for PEP8 validation checked through http://pep8online.com/
@@ -135,16 +147,30 @@ This file displayed a number of warnings regarding 'trailing whitespace', though
 
 
 ## Files for HTML validation
-+ base.html
-+ edit_band.html
-+ genre_detail.html
-+ index.html.html
-+ login.html
-+ logout.html
-+ signup.html
+
+HTML validated at https://validator.w3.org/
+
+![log in](https://user-images.githubusercontent.com/55660566/187303587-b88e4c63-36ef-40f8-b238-363a4fae2f83.png)
+
+![register](https://user-images.githubusercontent.com/55660566/187303590-90e29a86-89e5-46fe-9c6b-871023207576.png)
+
+![index and base](https://user-images.githubusercontent.com/55660566/187303592-6840600b-1ba4-479e-8bb5-783e847848fc.png)
+
+![genre detail](https://user-images.githubusercontent.com/55660566/187303591-3cff04ca-4caa-4a7b-856d-f3c38d3747ff.png)
+
+The above url (https://ci-pp4-unsigned-ireland.herokuapp.com/Instrumental/) tests the same code for /metal, /rock, /pop etc.
 
 ## CSS validation
+Css validated with jigsaw W3C CSS Validator
+![css 1](https://user-images.githubusercontent.com/55660566/187304676-c1e04272-eb83-4bf0-8607-1d3fffc31fb4.png)
 
+![css2](https://user-images.githubusercontent.com/55660566/187304677-c3d53235-9e04-4a3b-81e1-440fd1eec064.png)
+
+![css3](https://user-images.githubusercontent.com/55660566/187304678-929199c7-07e3-4d84-b5eb-bda96b8c68ca.png)
+
+![css4](https://user-images.githubusercontent.com/55660566/187304679-70408476-405f-4d2a-808f-0f691aa189c3.png)
+
+![css5](https://user-images.githubusercontent.com/55660566/187304680-f924fdc1-68af-4920-921b-39ebb6eea57d.png)
 
 
 ## 
@@ -154,11 +180,11 @@ This file displayed a number of warnings regarding 'trailing whitespace', though
 
 
 ## Credits
-+ All photos from pexels.com
++ All photos where taken from pexels.com and are then hosted on my cloundiary.com account.
 
 + The code for the navbar was taken from the 'I think therefore I blog' walkthrough navbar section of the base.html file and only changed very slightly.
 
-+ Also from the walkthrough I used as a template from the 'class PostDetail', the 'def get' and 'def post' functions as I want to mimic how a comment can be related to a particular post, that a band profile could be related to a particular genre/catagory. The code was changed to suit my sites needs, a quick comparison is of each is shown below, my code being that on the left in both screen shots.
++ Also from the walkthrough I used as a template from the 'class PostDetail', the 'def get' and 'def post' functions as I want to mimic how a comment is related to a particular post, that a band profile could be related to a particular genre/catagory. The code was changed to suit my sites needs, a quick comparison is of each is shown below, my code being that on the left in both screen shots.
 
 ![class compare](https://user-images.githubusercontent.com/55660566/186520286-5e55abf0-bdce-4e85-8f27-eb272e6a0441.png)
 
@@ -174,9 +200,9 @@ This file displayed a number of warnings regarding 'trailing whitespace', though
 + The third mockup/sketch was intended to be a separate page with only live performance information from all added bands, but I decided to keep the live preformance on each bands profile so the user doesn't need to leave a bands profile to find more information on them in another location.
 
 ## ongoing bugs:
-checking 'current image', if placeholder, will direct to wrong broken link/url , even though default image showing from correct url
+
 
 
 to add:
-log out message
+user story testing
 js testing

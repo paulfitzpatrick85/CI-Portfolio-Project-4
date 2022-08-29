@@ -8,9 +8,9 @@
     <div>
         {% if genre.genre_image|stringformat:'s'  == "placeholder" %}
         <img class="genre-image-size" src="https://res.cloudinary.com/paulfitz85/image/upload/v1659219337/media/images/default_genre_photo_acacvw.jpg"
-             alt="image of music catagory"/>
+             alt="image of music catagory">
         {% else %}
-        <img class="genre-image-size" class="image-border" src="{{ genre.genre_image.url }}" alt="image of music catagory">
+        <img class="genre-image-size image-border"  src="{{ genre.genre_image.url }}" alt="image of music catagory">
         {% endif %}
     </div>
     <div class="center-contents genre-heading-text">
@@ -23,10 +23,10 @@
         <button class="add-band-btn">
             <h3><a class="add-band-text" href="#band-forms">Click Here Add Your Band</a></h3>
         </button>
-
+        {% endif %}
     </div>
 </div>
-{% endif %}
+
 
 
 

@@ -167,6 +167,15 @@ div.controls > a {
     color: white;
 }
 
+.genre-image-size {
+    width: 50%
+}
+
+.band-image-size {
+    width: 60%;
+}
+
+
 /*media queries*/
 
 @media screen and (min-width: 940px) {

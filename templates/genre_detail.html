@@ -7,10 +7,10 @@
 <div class="center-contents">
     <div>
         {% if genre.genre_image|stringformat:'s'  == "placeholder" %}
-        <img src="https://res.cloudinary.com/paulfitz85/image/upload/v1659219337/media/images/default_genre_photo_acacvw.jpg"
-            width="50%" alt="image of music catagory">
+        <img class="genre-image-size" src="https://res.cloudinary.com/paulfitz85/image/upload/v1659219337/media/images/default_genre_photo_acacvw.jpg"
+             alt="image of music catagory"/>
         {% else %}
-        <img class="image-border" src="{{ genre.genre_image.url }}" width="50%" alt="image of music catagory">
+        <img class="genre-image-size" class="image-border" src="{{ genre.genre_image.url }}" alt="image of music catagory">
         {% endif %}
     </div>
     <div class="center-contents genre-heading-text">
@@ -34,11 +34,11 @@
 {% for band in bands %}
 <div class="center-contents band">
     {% if band.band_image|stringformat:'s'  == "placeholder_ex9qjl.jpg" %}
-    <img class="image-border"
+    <img class="image-border band-image-size"
         src="https://res.cloudinary.com/paulfitz85/image/upload/v1661539142/placeholder_ex9qjl.jpg"
-        width="60%" alt=" default image of band">
+     alt=" default image of band">
     {% else %}
-    <img class="image-border" src="{{ band.band_image.url }}" width="60%" alt="uploaded image of band">
+    <img class="image-border band-image-size" src="{{ band.band_image.url }}" alt="uploaded image of band">
     {% endif %}
     <div class="band-text">
         <h3>{{ band.band_name }} </h3>
@@ -73,8 +73,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-signup btn-lg" data-bs-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-signup btn-lg"><a href="/delete_band.html/{{ band.id }}">Delete
-                        Band</a></button>
+                <a class="btn btn-lg btn-danger" href="/delete_band.html/{{ band.id }}">Delete
+                        Band</a>
                 {{ message }}
             </div>
         </div>

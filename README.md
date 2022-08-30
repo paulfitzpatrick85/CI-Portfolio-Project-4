@@ -108,6 +108,14 @@ When the user is finished using the site and clicks 'log out' for the top menu, 
 ### Authentication
 If a another user is logged in, for example testuser2, and trys to edit the band profile created by testuser1, upon clicking the edit buttton, testuser2 is redirected to the home page, if 'delete band' is clicked, the delete modal will open as the first 'delete band' button is only a link to the modal, but if the 'delete band' button is clicked inside the modal to confirm deletion, testuser2 is redirected to the home page and no deletion occurs.
 
+## User Story Testing
+
++ The site is made and layed out in a way that is easy to use and does not bombard the user with too many or needless details.
++ The login/ log out status messages are displayed cleary and the user is made aware they are logged in at the top right of the screen on all pages. 
++ Adding a profile is made easy with a large button prompting the user to the form to input their details on their genre page of choice.
++ Uploading an image is made easy in that the user does not need to worry about the size of the image they upload, as it will automatically be set to a percentage in relation to the screen size the site is being viewed on.
++ The user can easily add a band profile in their chosen genre using the add band form, which can be easily and immediately edited once approved.
++ The users profile can be permanantly deleted from the database once they have confirmed deletion of the profile.
 
 
 ## Code Validation
@@ -146,7 +154,7 @@ This file displayed a number of warnings regarding 'trailing whitespace', though
 ![un-irel-urls-pep](https://user-images.githubusercontent.com/55660566/185740361-22a10c0c-3387-4c52-ac2d-fa167a23d4a0.png)
 
 
-## Files for HTML validation
+## HTML validation
 
 HTML validated at https://validator.w3.org/
 
@@ -162,6 +170,7 @@ The above url (https://ci-pp4-unsigned-ireland.herokuapp.com/Instrumental/) test
 
 ## CSS validation
 Css validated with jigsaw W3C CSS Validator
+
 ![css 1](https://user-images.githubusercontent.com/55660566/187304676-c1e04272-eb83-4bf0-8607-1d3fffc31fb4.png)
 
 ![css2](https://user-images.githubusercontent.com/55660566/187304677-c3d53235-9e04-4a3b-81e1-440fd1eec064.png)
@@ -173,23 +182,15 @@ Css validated with jigsaw W3C CSS Validator
 ![css5](https://user-images.githubusercontent.com/55660566/187304680-f924fdc1-68af-4920-921b-39ebb6eea57d.png)
 
 
-## 
-+ I tested the sites accessibility through lighthouse, the intial performance was 73, changing the image file from jpeg's to .avif format increase this to 97, the image below shows the results.
+## Javascript validation 
+validated at https://jshint.com/
+
+![js test](https://user-images.githubusercontent.com/55660566/187523340-c8a9f252-327e-43f3-af4b-33efffac2efc.png)
+
+## Accessibility
+I tested the sites accessibility through lighthouse, the intial performance was 73, changing the image file from jpeg's to .avif format increase this to 97, the image below shows the results.
 
 ![lighthouse](https://user-images.githubusercontent.com/55660566/185743809-a3a65569-0b3f-4152-8d55-d792a1979eef.png)
-
-
-## Credits
-+ All photos where taken from pexels.com and are then hosted on my cloundiary.com account.
-
-+ The code for the navbar was taken from the 'I think therefore I blog' walkthrough navbar section of the base.html file and only changed very slightly.
-
-+ Also from the walkthrough I used as a template from the 'class PostDetail', the 'def get' and 'def post' functions as I want to mimic how a comment is related to a particular post, that a band profile could be related to a particular genre/catagory. The code was changed to suit my sites needs, a quick comparison is of each is shown below, my code being that on the left in both screen shots.
-
-![class compare](https://user-images.githubusercontent.com/55660566/186520286-5e55abf0-bdce-4e85-8f27-eb272e6a0441.png)
-
-![def genre-post](https://user-images.githubusercontent.com/55660566/186520297-c6627bed-7b13-4a2a-9909-a76dc21da60e.png)
-
 
 # original mock up sketches
 
@@ -199,10 +200,25 @@ Css validated with jigsaw W3C CSS Validator
 
 + The third mockup/sketch was intended to be a separate page with only live performance information from all added bands, but I decided to keep the live preformance on each bands profile so the user doesn't need to leave a bands profile to find more information on them in another location.
 
-## ongoing bugs:
+
+## Credits
++ All photos where taken from pexels.com and are then hosted on my cloundiary.com account.
+
++ The code for the navbar was taken from the 'I think therefore I blog' walkthrough navbar section of the base.html file and only changed very slightly.
+
++ The javascript for the timing out of the messages displayed to the user was also taken from the 'blog' walkthrough project.
+
++ Also from the walkthrough I used as a template from the 'class PostDetail', the 'def get' and 'def post' functions as I want to mimic how a comment is related to a particular post, that a band profile could be related to a particular genre/catagory. The code was changed to suit my sites needs, a quick comparison is of each is shown below, my code being that on the left in both screen shots.
+
+![class compare](https://user-images.githubusercontent.com/55660566/186520286-5e55abf0-bdce-4e85-8f27-eb272e6a0441.png)
+
+![def genre-post](https://user-images.githubusercontent.com/55660566/186520297-c6627bed-7b13-4a2a-9909-a76dc21da60e.png)
 
 
-
-to add:
-user story testing
-js testing
+## Deployment 
+To deploy the project:
++ In settings.py I set DEBUG to 'False' and added the code "X_FRAME_OPTIONS = 'SAMEORIGIN'"
++ I then pushed my work to github in the the gitpod terminal using the commands: 'git add .', git commit -m "commit message"', 'git push'.
++ In heroku settings I removed the config variable 'DISABLE_COLLECTSTATIC'
++ In the heroku deploy tab I connected my github repository for the project to the heroku app.
++ I enabled automatic deploys then clicked 'deploy branch' to build the live app.

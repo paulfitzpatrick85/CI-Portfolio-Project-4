@@ -25,9 +25,9 @@ Github user storys url: https://github.com/users/paulfitzpatrick85/projects/9
 
 ![nar bar mobile](https://user-images.githubusercontent.com/55660566/185744303-dfc02fbd-98a8-4414-bab4-093bb934d307.png)
 
-If the user chooses to register an account they are required to provide a user name, an email which will be used to match them to the profiles they have created if they try to edit a previously added band profile, and lastly a password. If the user already has an account, the option to login is built into the form to save the user returning to the home page to select login from the menu, and vice versa, that if a use trys to login without an account the option to navigate to the register page is also in the login form.
+If the user chooses to register an account they are presented with a form where they can provide a user name, an email - which will be used to match them to the profiles they have created in order to allow them to edit a previously added band profile, or delete it if the so choose, and lastly a password. A note is displayed above the form fields instructing the user that when creating a band profile on the site, they must use the same email address they are about to register with. If the user already has an account, the option to login is built into the form to save the user returning to the home page to select login from the menu, and vice versa, that if a use trys to login without an account the option to navigate to the register page is also in the login form.
 
-![signup](https://user-images.githubusercontent.com/55660566/185745664-7b43f1bd-deab-4f6e-a6ea-90911c6ef0c0.png)
+![sign up](https://user-images.githubusercontent.com/55660566/187558438-d9b6dc84-1b2e-4a2c-8f46-66bbdef3b367.png)
 ![log in](https://user-images.githubusercontent.com/55660566/185745743-6d5fb1e1-ea0f-419a-a2b4-47fa94951d55.png)
 
 *I have setup profiles under two fictitious users to test with if an assessor wishes to use them, and also so that an assessor can attempt to edit and delete the profiles they did not create themselves in order to test the authentication functionality when logged in as there own created user.

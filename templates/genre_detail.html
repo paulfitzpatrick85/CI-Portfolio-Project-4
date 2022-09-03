@@ -36,7 +36,7 @@
     {% if band.band_image|stringformat:'s'  == "placeholder_ex9qjl.jpg" %}
     <img class="image-border band-image-size"
         src="https://res.cloudinary.com/paulfitz85/image/upload/v1661539142/placeholder_ex9qjl.jpg"
-     alt=" default image of band">
+        alt=" default image of band">
     {% else %}
     <img class="image-border band-image-size" src="{{ band.band_image.url }}" alt="uploaded image of band">
     {% endif %}
@@ -46,6 +46,7 @@
                 <h6><strong>See {{ band.band_name }} Perform Live</strong>: {{ band.next_gig }} at
                     {{ band.concert_venue }}</h6>
     </div>
+
     <!--edit band button if logged in-->
     {% if user.is_authenticated %}
     <button type="button" class="band-btn edit-btn btn btn-signup btn-lg" data-bs-dismiss="modal">
@@ -102,7 +103,6 @@
 
     <!--add band form-->
     <h3>Add Your Band Below <i class="fa fa-arrow-down"></i></h3>
-    <!--<p> {{ user.username }}</p>-->
     <form enctype="multipart/form-data" method="post" style="margin-top: 1.3em;">
         {{ band_form | crispy }}
         {% csrf_token %}

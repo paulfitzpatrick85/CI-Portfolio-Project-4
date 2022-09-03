@@ -2,6 +2,7 @@
 
 Unsigned Ireland is a website which allows users to add a profile of their band to the site's database, to be seen by all visitors to the site. The user, once registered, can upload an image of their band along with a biography and information on their next live performance. This information once approved, can be edited or deleted by the user who created it.
 
+
 You can view the live site here https://ci-pp4-unsigned-ireland.herokuapp.com/
 
 ![responsive-image](https://user-images.githubusercontent.com/55660566/187290399-6a6b4085-6dd7-4e2c-bf9c-7839b6ed496e.png)
@@ -30,7 +31,7 @@ If the user chooses to register an account they are presented with a form where 
 ![sign up](https://user-images.githubusercontent.com/55660566/187558438-d9b6dc84-1b2e-4a2c-8f46-66bbdef3b367.png)
 ![log in](https://user-images.githubusercontent.com/55660566/185745743-6d5fb1e1-ea0f-419a-a2b4-47fa94951d55.png)
 
-*I have setup profiles under two fictitious users to test with if an assessor wishes to use them, and also so that an assessor can attempt to edit and delete the profiles they did not create themselves in order to test the authentication functionality when logged in as there own created user.
+*I have setup profiles under two fictitious users in the genre 'Instrumental', to test with if an assessor wishes to use them, and also so that an assessor can attempt to edit and delete the profiles he or she did not create themselves in order to test the authentication functionality when logged in as there own created user.
 
 The details should they be needed are as follows:
 + username: testuser1, email: user1@gmail.com, password: testpassword1
@@ -191,6 +192,9 @@ validated at https://jshint.com/
 I tested the sites accessibility through lighthouse, the intial performance was 73, changing the image file from jpeg's to .avif format increase this to 97, the image below shows the results.
 
 ![lighthouse](https://user-images.githubusercontent.com/55660566/185743809-a3a65569-0b3f-4152-8d55-d792a1979eef.png)
+
+## Responsiveness
+The site is designed to be used on devices as small as 300px.
 
 # original mock up sketches
 

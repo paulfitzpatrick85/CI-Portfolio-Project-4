@@ -2,7 +2,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from .models import Genre, Band
 from .forms import BandForm
-# from django.http import HttpResponseRedirect
 from django.contrib import messages
 
 
@@ -23,7 +22,7 @@ class GenreDetail(View):
             request,     
             "genre_detail.html",      
             {
-                "genre": genre,          # render dictionary
+                "genre": genre,   # render dictionary
                 "bands": bands,
                 "band_added": False,
                 "band_form": BandForm()
@@ -72,13 +71,11 @@ def edit_band(request, band_id):
                                  instance=band) 
             if band_form.is_valid():
                 band_form.instance.band_email = request.user.email
-                band_form.instance.band_name = request.user.username
                 band.save()
                 messages.success(request, 
                                  'Your Band Details Were Edited Successfully.'
                                  'Return To Your Chosen Catagory to View Your '
                                  'Profile.')
-                # return redirect('/')
             else:
                 # Prepopulation happens here:
                 data = {"band_name": band.band_name,
@@ -87,8 +84,7 @@ def edit_band(request, band_id):
                         "band_bio": band.band_bio,
                         "next_gig": band.next_gig,
                         "concert_venue": band.concert_venue, }  
-                band_form = BandForm(initial=data) 
-        # messages.success(request, 'band edited successfully')      
+                band_form = BandForm(initial=data)      
         context = {"band_form": BandForm(instance=band)}
         return render(request, 'edit_band.html', context, )
 

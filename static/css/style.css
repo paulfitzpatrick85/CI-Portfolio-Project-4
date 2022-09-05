@@ -165,10 +165,13 @@ margin-bottom: 10px;
 
 div.controls > a {
     color: white;
+    max-height: 50%
 }
 
 .genre-image-size {
-    width: 50%
+    width: 50%;
+    max-height: 50%;
+
 }
 
 .band-image-size {

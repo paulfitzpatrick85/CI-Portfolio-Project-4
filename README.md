@@ -8,13 +8,18 @@ You can view the live site here https://ci-pp4-unsigned-ireland.herokuapp.com/
 ![responsive-image](https://user-images.githubusercontent.com/55660566/187290399-6a6b4085-6dd7-4e2c-bf9c-7839b6ed496e.png)
 
 ## User Storys
-Github user storys url: https://github.com/users/paulfitzpatrick85/projects/9
 + As a user I want to register for an account with the website
 + As a user I want to see my logged or logged out in status
 + As a user I want to add a profile with a short biography 
 + As a user I want to be able to upload a photo for my profile
 + As a user I want to update my text/bio and photo
 + As a user I want to be able to delete my profile
+
+(As the link I originally provided, https://github.com/users/paulfitzpatrick85/projects/9, could not be opened by my mentor when looking over my project, his thoughts where maybe I could only see them/open the link, as I was obviously signed in to the account. So I have provided proof of the use of this agile tool in the form of screenshots below.)
+
+![user storys1](https://user-images.githubusercontent.com/55660566/188507848-449b91f3-7e3d-4415-8988-f3dec229ffcb.png)
+
+![user story2](https://user-images.githubusercontent.com/55660566/188507858-33a826ec-e1d6-4dd8-a0c5-080e7d161561.png)
 
 ## How To Use The Website
  When a user visits the page, they can navigate to the menu in the top left of the page where they can attempt to log in if they have an account or register for account if they have yet to create one.

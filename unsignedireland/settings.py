@@ -22,6 +22,11 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['ci-pp4-unsigned-ireland.herokuapp.com', 'localhost']
 
+# Add Render.com URL to allowed hosts
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -88,8 +93,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'unsignedireland.wsgi.application'
-
-
 
 
 DATABASES = {

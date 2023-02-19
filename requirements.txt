@@ -1,8 +1,11 @@
 asgiref==3.6.0
 backports.zoneinfo==0.2.1
+cloudinary==1.32.0
 dj-database-url==1.2.0
 Django==3.2.18
 django-allauth==0.52.0
+django-cloudinary-storage==0.3.0
+gunicorn==20.1.0
 oauthlib==3.2.2
 PyJWT==2.6.0
 python3-openid==3.2.0
